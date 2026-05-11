@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://coolptn8w10os"]
+
+[ext_resource type="PackedScene" uid="uid://drwujyv6abhfd" path="res://objetos/porta_and.tscn" id="1_ogo00"]
+[ext_resource type="PackedScene" uid="uid://cgdlbfcdpeni2" path="res://objetos/porta_nand.tscn" id="2_416xm"]
+
+[node name="TesteLigarPortas" type="Node2D" unique_id=1270901224]
+
+[node name="PortaNand" parent="." unique_id=445273209 instance=ExtResource("2_416xm")]
+position = Vector2(1508.9999, 647)
+scale = Vector2(5, 5)
+
+[node name="PortaAnd" parent="." unique_id=1581419183 instance=ExtResource("1_ogo00")]
+position = Vector2(434, 366)
+scale = Vector2(5, 5)

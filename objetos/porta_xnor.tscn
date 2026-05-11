@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://balvo76xl87jm"]
+
+[ext_resource type="Texture2D" uid="uid://wkfsri3pl608" path="res://addons/portas_logicas/porta_xnor.png" id="1_0cjil"]
+[ext_resource type="Script" uid="uid://b07g66uolohvj" path="res://teste/porta_logica.gd" id="2_jc5n5"]
+[ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_v4lp0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kri5b"]
+radius = 4.0
+
+[node name="PortaXnor" type="Sprite2D" unique_id=1232400015]
+texture = ExtResource("1_0cjil")
+script = ExtResource("2_jc5n5")
+
+[node name="Entrada1" type="Area2D" parent="." unique_id=1845265870 groups=["entrada"]]
+position = Vector2(-41, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada1" unique_id=725968408]
+shape = SubResource("CircleShape2D_kri5b")
+
+[node name="Entrada2" type="Area2D" parent="." unique_id=1425757444 groups=["entrada"]]
+position = Vector2(-41, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada2" unique_id=2144718819]
+shape = SubResource("CircleShape2D_kri5b")
+
+[node name="Saida" type="Area2D" parent="." unique_id=1579592663 groups=["saida"]]
+position = Vector2(41, 0)
+script = ExtResource("3_v4lp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" unique_id=1606085137]
+shape = SubResource("CircleShape2D_kri5b")
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=1994221236]
+unique_name_in_owner = true
+
+[connection signal="mouse_entered" from="Entrada1" to="Entrada1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada1" to="Entrada1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Entrada2" to="Entrada2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada2" to="Entrada2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida" to="Saida" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida" to="Saida" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida" to="Saida" method="_on_mouse_exited"]
