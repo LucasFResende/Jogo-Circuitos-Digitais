@@ -2,13 +2,45 @@
 
 [ext_resource type="PackedScene" uid="uid://drwujyv6abhfd" path="res://objetos/porta_and.tscn" id="1_ogo00"]
 [ext_resource type="PackedScene" uid="uid://cgdlbfcdpeni2" path="res://objetos/porta_nand.tscn" id="2_416xm"]
+[ext_resource type="PackedScene" uid="uid://dqqn0f37jrurl" path="res://objetos/porta_nor.tscn" id="3_lmbus"]
+[ext_resource type="PackedScene" uid="uid://chbvjwgwihu33" path="res://objetos/porta_not.tscn" id="4_4riqy"]
+[ext_resource type="PackedScene" uid="uid://dojaf0u8vki8r" path="res://objetos/porta_or.tscn" id="5_g7s73"]
+[ext_resource type="PackedScene" uid="uid://balvo76xl87jm" path="res://objetos/porta_xnor.tscn" id="6_yudkl"]
+[ext_resource type="PackedScene" uid="uid://bmasn50rrds44" path="res://objetos/porta_xor.tscn" id="7_4nmoc"]
 
 [node name="TesteLigarPortas" type="Node2D" unique_id=1270901224]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=892844322]
+z_index = -1
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
 [node name="PortaNand" parent="." unique_id=445273209 instance=ExtResource("2_416xm")]
-position = Vector2(1508.9999, 647)
+position = Vector2(1007, 176.00009)
 scale = Vector2(5, 5)
 
 [node name="PortaAnd" parent="." unique_id=1581419183 instance=ExtResource("1_ogo00")]
-position = Vector2(434, 366)
+position = Vector2(303, 181.00005)
+scale = Vector2(5, 5)
+
+[node name="PortaNor" parent="." unique_id=443077450 instance=ExtResource("3_lmbus")]
+position = Vector2(1584, 171)
+scale = Vector2(5, 5)
+
+[node name="PortaNot" parent="." unique_id=1974483858 instance=ExtResource("4_4riqy")]
+position = Vector2(300, 530.00006)
+scale = Vector2(5, 5)
+
+[node name="PortaOr" parent="." unique_id=2034512787 instance=ExtResource("5_g7s73")]
+position = Vector2(876.00006, 531.00006)
+scale = Vector2(5, 5)
+
+[node name="PortaXnor" parent="." unique_id=1232400015 instance=ExtResource("6_yudkl")]
+position = Vector2(1584, 567.00006)
+scale = Vector2(5, 5)
+
+[node name="PortaXor" parent="." unique_id=1846314272 instance=ExtResource("7_4nmoc")]
+position = Vector2(904.99994, 913)
 scale = Vector2(5, 5)

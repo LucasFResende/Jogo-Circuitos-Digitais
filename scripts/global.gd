@@ -3,11 +3,13 @@ extends Node
 var esta_ligando_portas:bool = false
 var linha:Line2D = null
 var id_porta = null
+var mouse_padrao = "res://addons/cursores/Arrow2.png"
+var mouse_selecao = "res://addons/cursores/Hand1.png"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -34,3 +34,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		
 		Global.esta_ligando_portas = true
 		Global.id_porta = get_parent().id
+
+func _on_mouse_entered() -> void:
+	Input.set_custom_mouse_cursor(load(Global.mouse_selecao))
+
+
+func _on_mouse_exited() -> void:
+	Input.set_custom_mouse_cursor(load(Global.mouse_padrao))

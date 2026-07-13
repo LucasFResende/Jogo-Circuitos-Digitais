@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://6sduws4ntupy"]
+
+[ext_resource type="Texture2D" uid="uid://ntihl0ooa05x" path="res://addons/cenario/UI-Principal.png" id="1_achv1"]
+[ext_resource type="Texture2D" uid="uid://5rfohgjp5w7" path="res://addons/cenario/manual.png" id="2_sxp2k"]
+[ext_resource type="Texture2D" uid="uid://l1vg35xto5i5" path="res://addons/cenario/clipboard.png" id="3_2rmsn"]
+[ext_resource type="Script" uid="uid://bh1go8052sv5f" path="res://scripts/botoes_principal.gd" id="3_sxp2k"]
+[ext_resource type="Texture2D" uid="uid://bb6jbytqqv2t1" path="res://addons/cenario/computador.png" id="4_y215v"]
+[ext_resource type="Texture2D" uid="uid://ylc7ffjlmn27" path="res://addons/cenario/editor-circuitos.png" id="5_a18yh"]
+[ext_resource type="PackedScene" uid="uid://coolptn8w10os" path="res://teste/teste_ligar_portas.tscn" id="7_2rmsn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a554"]
+texture = ExtResource("1_achv1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y215v"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_achv1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sgnu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_723qm"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_724ds"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiapp"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2sc1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3vlj"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Principal" type="Control" unique_id=1614119611]
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1709738492]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0a554")
+
+[node name="ManualButton" type="Button" parent="." unique_id=1054791690]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 64.0
+offset_top = 698.0
+offset_right = 263.0
+offset_bottom = 997.0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_y215v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_achv1")
+icon = ExtResource("2_sxp2k")
+icon_alignment = 1
+script = ExtResource("3_sxp2k")
+
+[node name="ClipboardButton" type="Button" parent="." unique_id=1289351594]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 269.0
+offset_top = 50.0
+offset_right = 1270.0
+offset_bottom = 552.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8sgnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_723qm")
+icon = ExtResource("3_2rmsn")
+icon_alignment = 1
+script = ExtResource("3_sxp2k")
+
+[node name="ComputadorButton" type="Button" parent="." unique_id=1414739302]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1409.0
+offset_top = 315.0
+offset_right = 1876.0
+offset_bottom = 618.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_724ds")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xiapp")
+icon = ExtResource("4_y215v")
+icon_alignment = 1
+script = ExtResource("3_sxp2k")
+
+[node name="EditorCircuitosButton" type="Button" parent="." unique_id=851164548]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 668.0
+offset_top = 746.0
+offset_right = 1219.0
+offset_bottom = 998.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_v2sc1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d3vlj")
+icon = ExtResource("5_a18yh")
+icon_alignment = 1
+script = ExtResource("3_sxp2k")
+cenario_destino = ExtResource("7_2rmsn")
+
+[connection signal="pressed" from="ManualButton" to="ManualButton" method="_on_pressed"]
+[connection signal="pressed" from="ClipboardButton" to="ClipboardButton" method="_on_pressed"]
+[connection signal="pressed" from="ComputadorButton" to="ComputadorButton" method="_on_pressed"]
+[connection signal="pressed" from="EditorCircuitosButton" to="EditorCircuitosButton" method="_on_pressed"]
