@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bh1go8052sv5f" path="res://scripts/botoes_principal.gd" id="3_sxp2k"]
 [ext_resource type="Texture2D" uid="uid://bb6jbytqqv2t1" path="res://addons/cenario/computador.png" id="4_y215v"]
 [ext_resource type="Texture2D" uid="uid://ylc7ffjlmn27" path="res://addons/cenario/editor-circuitos.png" id="5_a18yh"]
-[ext_resource type="PackedScene" uid="uid://coolptn8w10os" path="res://teste/teste_ligar_portas.tscn" id="7_2rmsn"]
+[ext_resource type="PackedScene" uid="uid://cqq5l40bh7g40" path="res://cenarios/editor_cenario.tscn" id="7_2rmsn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a554"]
 texture = ExtResource("1_achv1")
@@ -59,7 +59,6 @@ offset_left = 64.0
 offset_top = 698.0
 offset_right = 263.0
 offset_bottom = 997.0
-mouse_filter = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_y215v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_achv1")
 icon = ExtResource("2_sxp2k")
