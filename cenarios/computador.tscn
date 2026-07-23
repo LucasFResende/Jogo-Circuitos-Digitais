@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://r2e2omu0n8hh"]
+
+[ext_resource type="Texture2D" uid="uid://cefs6yv8ijkh2" path="res://addons/cenario/UI-computador-Concept.png" id="1_esrmc"]
+[ext_resource type="PackedScene" uid="uid://begdjq2f7k3lr" path="res://cenarios/fechar_button.tscn" id="2_ayrso"]
+[ext_resource type="Texture2D" uid="uid://7nvs3wvj3yhs" path="res://addons/cenario/email_hover.png" id="3_siid3"]
+[ext_resource type="Texture2D" uid="uid://dnsx8dmedg87o" path="res://addons/cenario/email.png" id="4_xbf3q"]
+[ext_resource type="Script" uid="uid://c8lxtyuev7s1w" path="res://scripts/email_button.gd" id="5_xbf3q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1574"]
+bg_color = Color(0.22352941, 0.56078434, 0.99607843, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_texfu"]
+texture = ExtResource("3_siid3")
+
+[node name="Computador" type="Control" unique_id=1567199012]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1157730055]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_esrmc")
+
+[node name="FecharButton" parent="." unique_id=1356883158 instance=ExtResource("2_ayrso")]
+z_index = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 827.0
+offset_top = -523.0
+offset_right = 939.0
+offset_bottom = -411.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EmailButton" type="Button" parent="." unique_id=885251919]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -820.0
+offset_top = -432.0
+offset_right = -684.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f1574")
+theme_override_styles/hover = SubResource("StyleBoxTexture_texfu")
+icon = ExtResource("4_xbf3q")
+icon_alignment = 1
+script = ExtResource("5_xbf3q")
+
+[connection signal="mouse_entered" from="EmailButton" to="EmailButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EmailButton" to="EmailButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="EmailButton" to="EmailButton" method="_on_pressed"]

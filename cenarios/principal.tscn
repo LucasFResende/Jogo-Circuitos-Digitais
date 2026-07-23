@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://ntihl0ooa05x" path="res://addons/cenario/UI-Principal.png" id="1_achv1"]
 [ext_resource type="Texture2D" uid="uid://5rfohgjp5w7" path="res://addons/cenario/manual.png" id="2_sxp2k"]
-[ext_resource type="Texture2D" uid="uid://l1vg35xto5i5" path="res://addons/cenario/clipboard.png" id="3_2rmsn"]
 [ext_resource type="Script" uid="uid://bh1go8052sv5f" path="res://scripts/botoes_principal.gd" id="3_sxp2k"]
+[ext_resource type="PackedScene" uid="uid://batc31p0ilsuq" path="res://cenarios/manual.tscn" id="4_a18yh"]
 [ext_resource type="Texture2D" uid="uid://bb6jbytqqv2t1" path="res://addons/cenario/computador.png" id="4_y215v"]
 [ext_resource type="Texture2D" uid="uid://ylc7ffjlmn27" path="res://addons/cenario/editor-circuitos.png" id="5_a18yh"]
 [ext_resource type="PackedScene" uid="uid://cqq5l40bh7g40" path="res://cenarios/editor_cenario.tscn" id="7_2rmsn"]
+[ext_resource type="PackedScene" uid="uid://r2e2omu0n8hh" path="res://cenarios/computador.tscn" id="7_a18yh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a554"]
 texture = ExtResource("1_achv1")
@@ -15,12 +16,6 @@ texture = ExtResource("1_achv1")
 bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_achv1"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sgnu"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_723qm"]
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_724ds"]
@@ -64,19 +59,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_achv1")
 icon = ExtResource("2_sxp2k")
 icon_alignment = 1
 script = ExtResource("3_sxp2k")
-
-[node name="ClipboardButton" type="Button" parent="." unique_id=1289351594]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 269.0
-offset_top = 50.0
-offset_right = 1270.0
-offset_bottom = 552.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_8sgnu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_723qm")
-icon = ExtResource("3_2rmsn")
-icon_alignment = 1
-script = ExtResource("3_sxp2k")
+cenario_destino = ExtResource("4_a18yh")
 
 [node name="ComputadorButton" type="Button" parent="." unique_id=1414739302]
 unique_name_in_owner = true
@@ -90,6 +73,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xiapp")
 icon = ExtResource("4_y215v")
 icon_alignment = 1
 script = ExtResource("3_sxp2k")
+cenario_destino = ExtResource("7_a18yh")
 
 [node name="EditorCircuitosButton" type="Button" parent="." unique_id=851164548]
 unique_name_in_owner = true
@@ -106,6 +90,5 @@ script = ExtResource("3_sxp2k")
 cenario_destino = ExtResource("7_2rmsn")
 
 [connection signal="pressed" from="ManualButton" to="ManualButton" method="_on_pressed"]
-[connection signal="pressed" from="ClipboardButton" to="ClipboardButton" method="_on_pressed"]
 [connection signal="pressed" from="ComputadorButton" to="ComputadorButton" method="_on_pressed"]
 [connection signal="pressed" from="EditorCircuitosButton" to="EditorCircuitosButton" method="_on_pressed"]

@@ -14,7 +14,7 @@ func _on_pressed() -> void:
 	botao_computador.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	botao_editor_circuito.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var destino = cenario_destino.instantiate()
-	destino.get_child(2).fechar.connect(fechando)
+	destino.find_child("FecharButton").fechar.connect(fechando)
 	get_parent().add_sibling(destino)
 	print_tree()
 

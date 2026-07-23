@@ -1,10 +1,12 @@
 extends Button
 
-signal fechar
+@onready var email_cena:PackedScene = load("res://cenarios/email.tscn")
+
 
 func _on_pressed() -> void:
-	fechar.emit()
-	get_parent().call_deferred("queue_free")
+	var instancia = email_cena.instantiate()
+	self.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	get_parent().add_child(instancia)
 
 func _on_mouse_entered() -> void:
 	Input.set_custom_mouse_cursor(load(Global.mouse_selecao))

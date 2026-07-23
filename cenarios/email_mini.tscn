@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cjb7v1gup1skw"]
+
+[ext_resource type="Texture2D" uid="uid://dh75yv56t56s5" path="res://addons/cenario/UI-email-mini.png" id="1_ybt5s"]
+
+[node name="EmailMini" type="Control" unique_id=343686397]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=67663165]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -912.5
+offset_right = 907.5
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ybt5s")

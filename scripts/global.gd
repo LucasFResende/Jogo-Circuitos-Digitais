@@ -11,7 +11,6 @@ var mouse_selecao = "res://addons/cursores/Hand1.png"
 func _ready() -> void:
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

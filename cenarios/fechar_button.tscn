@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://begdjq2f7k3lr"]
+
+[ext_resource type="Texture2D" uid="uid://divp1eu8ko0w6" path="res://addons/cenario/fechar_hover.png" id="1_bemoe"]
+[ext_resource type="Texture2D" uid="uid://dm1ur6oyjjux3" path="res://addons/cenario/fechar.png" id="2_tpl72"]
+[ext_resource type="Script" uid="uid://dobkxofn7k07i" path="res://scripts/fechar_button.gd" id="3_xudkp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdioa"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv0sf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eivox"]
+texture = ExtResource("1_bemoe")
+
+[node name="FecharButton" type="Button" unique_id=1356883158]
+offset_right = 112.0
+offset_bottom = 112.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdioa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tv0sf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eivox")
+action_mode = 0
+icon = ExtResource("2_tpl72")
+icon_alignment = 1
+script = ExtResource("3_xudkp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
