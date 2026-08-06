@@ -1,6 +1,8 @@
+class_name Saida
 extends Area2D
 
 @onready var no_saida_ligacao = %SaidaLigacao
+@onready var sinal:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,20 +25,19 @@ func _process(delta: float) -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("btn_esquerdo") and not Global.esta_ligando_portas:
-		Global.linha = Line2D.new()
+		Global.linha = Conexao.new()
 		no_saida_ligacao.add_child(Global.linha)
 		
 		var start_pos = Global.linha.to_local(global_position)
 		Global.linha.add_point(start_pos)
 		Global.linha.add_point(start_pos)
-		Global.linha.default_color = Color.DARK_RED
-		Global.linha.width = 3
 		
 		Global.esta_ligando_portas = true
 		Global.id_porta = get_parent().id
+		Global.linha.porta_saida = self
 
 func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(load(Global.mouse_selecao))
+	Input.set_custom_mouse_cursor(load(Global.mouse_selecao),Input.CURSOR_ARROW,Vector2(15,0))
 
 
 func _on_mouse_exited() -> void:

@@ -1,7 +1,7 @@
 extends Node
 
 var esta_ligando_portas:bool = false
-var linha:Line2D = null
+var linha:Conexao = null
 var id_porta = null
 var mouse_padrao = "res://addons/cursores/Arrow2.png"
 var mouse_selecao = "res://addons/cursores/Hand1.png"
@@ -13,4 +13,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("esc"):
+		get_tree().quit()

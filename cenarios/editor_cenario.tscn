@@ -3,7 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bxgwroxxsxux1" path="res://addons/cenario/UI-Edicao-Circuito-Concept.png" id="1_c087g"]
 [ext_resource type="Texture2D" uid="uid://c6d7qjnecuvpy" path="res://addons/cenario/barra.png" id="2_6ulvt"]
 [ext_resource type="PackedScene" uid="uid://begdjq2f7k3lr" path="res://cenarios/fechar_button.tscn" id="3_luy5i"]
+[ext_resource type="PackedScene" uid="uid://drwujyv6abhfd" path="res://objetos/porta_and.tscn" id="5_rc6gm"]
 [ext_resource type="Texture2D" uid="uid://cibnqtuc4dgq8" path="res://addons/cenario/seta.png" id="5_tl5uj"]
+[ext_resource type="PackedScene" uid="uid://cgdlbfcdpeni2" path="res://objetos/porta_nand.tscn" id="6_miamp"]
+[ext_resource type="PackedScene" uid="uid://dqqn0f37jrurl" path="res://objetos/porta_nor.tscn" id="7_pfohb"]
+[ext_resource type="PackedScene" uid="uid://chbvjwgwihu33" path="res://objetos/porta_not.tscn" id="8_v0pkc"]
+[ext_resource type="PackedScene" uid="uid://dojaf0u8vki8r" path="res://objetos/porta_or.tscn" id="9_l38a8"]
+[ext_resource type="PackedScene" uid="uid://balvo76xl87jm" path="res://objetos/porta_xnor.tscn" id="10_613l6"]
+[ext_resource type="PackedScene" uid="uid://bmasn50rrds44" path="res://objetos/porta_xor.tscn" id="11_648rf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1574"]
 texture = ExtResource("1_c087g")
@@ -96,3 +103,63 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_f1574")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tv0sf")
 icon = ExtResource("5_tl5uj")
 icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1528491819]
+layout_mode = 0
+offset_left = -459.0
+offset_top = 405.6
+offset_right = 521.0
+offset_bottom = 538.6
+offset_transform_position = Vector2(0, 65.5)
+mouse_filter = 2
+theme_override_constants/separation = 140
+alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=476676322]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PortaAnd" parent="HBoxContainer/Control" unique_id=1581419183 instance=ExtResource("5_rc6gm")]
+
+[node name="Control2" type="Control" parent="HBoxContainer" unique_id=998995857]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PortaNand" parent="HBoxContainer/Control2" unique_id=445273209 instance=ExtResource("6_miamp")]
+
+[node name="Control3" type="Control" parent="HBoxContainer" unique_id=504192515]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PortaNor" parent="HBoxContainer/Control3" unique_id=443077450 instance=ExtResource("7_pfohb")]
+
+[node name="Control4" type="Control" parent="HBoxContainer" unique_id=789037700]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PortaNot" parent="HBoxContainer/Control4" unique_id=1974483858 instance=ExtResource("8_v0pkc")]
+
+[node name="Control5" type="Control" parent="HBoxContainer" unique_id=508081973]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PortaOr" parent="HBoxContainer/Control5" unique_id=2034512787 instance=ExtResource("9_l38a8")]
+
+[node name="Control6" type="Control" parent="HBoxContainer" unique_id=836360393]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PortaXnor" parent="HBoxContainer/Control6" unique_id=1232400015 instance=ExtResource("10_613l6")]
+
+[node name="Control7" type="Control" parent="HBoxContainer" unique_id=1207555114]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PortaXor" parent="HBoxContainer/Control7" unique_id=1846314272 instance=ExtResource("11_648rf")]
+
+[node name="Circuito" type="Control" parent="." unique_id=946407543 groups=["circuito"]]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2

@@ -1,5 +1,7 @@
-extends Node2D
+class_name Entrada
+extends Area2D
 
+@onready var sinal:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +19,11 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		Global.linha.set_point_position(1, end_pos)
 		Global.esta_ligando_portas = false
 		Global.id_porta = -1
+		Global.linha.porta_entrada = self
 
 
 func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(load(Global.mouse_selecao))
+	Input.set_custom_mouse_cursor(load(Global.mouse_selecao),Input.CURSOR_ARROW,Vector2(15,0))
 
 
 func _on_mouse_exited() -> void:

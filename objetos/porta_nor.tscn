@@ -1,16 +1,23 @@
 [gd_scene format=3 uid="uid://dqqn0f37jrurl"]
 
 [ext_resource type="Texture2D" uid="uid://cyjaw2ok16efh" path="res://addons/portas_logicas/porta_nor.png" id="1_ypid3"]
-[ext_resource type="Script" uid="uid://b07g66uolohvj" path="res://teste/porta_logica.gd" id="2_byw2l"]
+[ext_resource type="Script" uid="uid://b07g66uolohvj" path="res://scripts/porta_logica.gd" id="2_byw2l"]
 [ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="3_32kd5"]
 [ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_yqnv8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kri5b"]
 radius = 4.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(58, 42)
+
 [node name="PortaNor" type="Sprite2D" unique_id=443077450]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_ypid3")
 script = ExtResource("2_byw2l")
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=917329911]
+unique_name_in_owner = true
 
 [node name="Entrada1" type="Area2D" parent="." unique_id=22627444 groups=["entrada"]]
 position = Vector2(-41, -10)
@@ -33,8 +40,12 @@ script = ExtResource("3_yqnv8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" unique_id=1483652544]
 shape = SubResource("CircleShape2D_kri5b")
 
-[node name="SaidaLigacao" type="Node2D" parent="." unique_id=917329911]
+[node name="ArrastarArea" type="Area2D" parent="." unique_id=1665898863]
 unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=1917783001]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_f1574")
 
 [connection signal="input_event" from="Entrada1" to="Entrada1" method="_on_input_event"]
 [connection signal="mouse_entered" from="Entrada1" to="Entrada1" method="_on_mouse_entered"]

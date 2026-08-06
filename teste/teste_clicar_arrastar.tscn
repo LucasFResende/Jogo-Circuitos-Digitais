@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bf0g81m6ley5x"]
+
+[ext_resource type="PackedScene" uid="uid://drwujyv6abhfd" path="res://objetos/porta_and.tscn" id="1_q3eed"]
+
+[node name="Node2D" type="Control" unique_id=929546119]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PortaAnd" parent="." unique_id=1581419183 instance=ExtResource("1_q3eed")]
+position = Vector2(986, 1002)
