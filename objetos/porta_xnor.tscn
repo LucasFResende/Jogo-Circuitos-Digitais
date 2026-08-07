@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://balvo76xl87jm"]
 
 [ext_resource type="Texture2D" uid="uid://wkfsri3pl608" path="res://addons/portas_logicas/porta_xnor.png" id="1_0cjil"]
-[ext_resource type="Script" uid="uid://b07g66uolohvj" path="res://scripts/porta_logica.gd" id="2_jc5n5"]
+[ext_resource type="Script" uid="uid://ggw4hsldpknf" path="res://scripts/porta_xnor.gd" id="2_v4lp0"]
 [ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="3_ms8hi"]
 [ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_v4lp0"]
 
@@ -14,7 +14,7 @@ size = Vector2(56, 42)
 [node name="PortaXnor" type="Sprite2D" unique_id=1232400015]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_0cjil")
-script = ExtResource("2_jc5n5")
+script = ExtResource("2_v4lp0")
 
 [node name="SaidaLigacao" type="Node2D" parent="." unique_id=1994221236]
 unique_name_in_owner = true

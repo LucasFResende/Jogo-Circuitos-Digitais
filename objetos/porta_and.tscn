@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://sjyq6epe1psf" path="res://addons/portas_logicas/porta_and.png" id="1_amh64"]
 [ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="2_42eg7"]
-[ext_resource type="Script" uid="uid://b07g66uolohvj" path="res://scripts/porta_logica.gd" id="2_teanx"]
+[ext_resource type="Script" uid="uid://coxswnge7c5uq" path="res://scripts/porta_and.gd" id="2_teanx"]
 [ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="4_teanx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_teanx"]

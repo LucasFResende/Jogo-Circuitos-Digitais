@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dn60c7wb5sjen"]
+
+[ext_resource type="Texture2D" uid="uid://drpni1a42jpdy" path="res://addons/portas_logicas/fonte_sinal1.png" id="1_wa0ky"]
+[ext_resource type="Script" uid="uid://dhvd5sbnkf046" path="res://scripts/fonte_sinal.gd" id="2_4o7b4"]
+[ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_4o7b4"]
+[ext_resource type="Script" uid="uid://bcdos2akgrs6b" path="res://scripts/butao_ligar_desligar.gd" id="4_qkl8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1574"]
+radius = 3.535534
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(53, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie5d1"]
+size = Vector2(20, 18)
+
+[node name="FonteSinal" type="Sprite2D" unique_id=766838194]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_wa0ky")
+flip_h = true
+script = ExtResource("2_4o7b4")
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=625803256]
+unique_name_in_owner = true
+
+[node name="Saida" type="Area2D" parent="." unique_id=909673985 groups=["saida"]]
+position = Vector2(49, 13.5)
+script = ExtResource("3_4o7b4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" unique_id=1478469236]
+shape = SubResource("CircleShape2D_f1574")
+
+[node name="ArrastarArea" type="Area2D" parent="." unique_id=1918893829]
+unique_name_in_owner = true
+position = Vector2(-36, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=789639193]
+position = Vector2(8.5, -1)
+shape = SubResource("RectangleShape2D_f1574")
+
+[node name="ButaoLigarDesligar" type="Area2D" parent="." unique_id=1367436659]
+unique_name_in_owner = true
+position = Vector2(15, 10)
+script = ExtResource("4_qkl8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButaoLigarDesligar" unique_id=2003366656]
+shape = SubResource("RectangleShape2D_ie5d1")
+
+[connection signal="input_event" from="Saida" to="Saida" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida" to="Saida" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida" to="Saida" method="_on_mouse_exited"]
+[connection signal="input_event" from="ButaoLigarDesligar" to="." method="_on_butao_ligar_desligar_input_event"]
+[connection signal="mouse_entered" from="ButaoLigarDesligar" to="ButaoLigarDesligar" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ButaoLigarDesligar" to="ButaoLigarDesligar" method="_on_mouse_exited"]

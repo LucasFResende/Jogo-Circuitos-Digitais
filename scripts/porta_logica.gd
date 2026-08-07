@@ -5,7 +5,7 @@ var esta_arrastando: bool = false
 var pode_duplicar:bool = true
 var clique_offset: Vector2 = Vector2.ZERO
 var posicao_origem: Vector2
-var sinal:int
+var sinal:bool = 0
 
 @onready var area_2d: Area2D = %ArrastarArea
 @onready var id:int = rand_from_seed(self.name.hash())[0]
@@ -32,6 +32,7 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	verificar_logica()
 	if esta_arrastando:
 		global_position = get_global_mouse_position() - clique_offset
 	
@@ -42,5 +43,5 @@ func _on_area_2d_input_event(_viweport:Node, event:InputEvent, _shape_idx:int) -
 			esta_arrastando = true
 			clique_offset = get_global_mouse_position() - global_position
 
-func verificar_logica(valor1:int, valor2:int) -> int:
-	return 0
+func verificar_logica() -> void:
+	pass
