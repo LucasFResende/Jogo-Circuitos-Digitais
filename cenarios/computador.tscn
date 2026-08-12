@@ -26,7 +26,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_esrmc")
 
-[node name="FecharButton" parent="." unique_id=1356883158 instance=ExtResource("2_ayrso")]
+[node name="FecharButton" parent="." unique_id=1356883158 node_paths=PackedStringArray("no_pai") instance=ExtResource("2_ayrso")]
 z_index = 5
 layout_mode = 1
 anchors_preset = 8
@@ -40,6 +40,7 @@ offset_right = 939.0
 offset_bottom = -411.0
 grow_horizontal = 2
 grow_vertical = 2
+no_pai = NodePath("..")
 
 [node name="EmailButton" type="Button" parent="." unique_id=885251919]
 custom_maximum_size = Vector2(128, 128)

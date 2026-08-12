@@ -17,7 +17,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_qf731")
 
-[node name="FecharButton" parent="." unique_id=1356883158 instance=ExtResource("2_cvp6b")]
+[node name="FecharButton" parent="." unique_id=1356883158 node_paths=PackedStringArray("no_pai") instance=ExtResource("2_cvp6b")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,3 +30,4 @@ offset_right = 939.0
 offset_bottom = -411.0
 grow_horizontal = 2
 grow_vertical = 2
+no_pai = NodePath("..")

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cqq5l40bh7g40"]
 
+[ext_resource type="Script" uid="uid://c10at5434yqlo" path="res://scripts/camera_2d.gd" id="1_648rf"]
 [ext_resource type="Texture2D" uid="uid://bxgwroxxsxux1" path="res://addons/cenario/UI-Edicao-Circuito-Concept.png" id="1_c087g"]
 [ext_resource type="Texture2D" uid="uid://c6d7qjnecuvpy" path="res://addons/cenario/barra.png" id="2_6ulvt"]
 [ext_resource type="PackedScene" uid="uid://begdjq2f7k3lr" path="res://cenarios/fechar_button.tscn" id="3_luy5i"]
@@ -14,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://balvo76xl87jm" path="res://objetos/porta_xnor.tscn" id="10_613l6"]
 [ext_resource type="PackedScene" uid="uid://bmasn50rrds44" path="res://objetos/porta_xor.tscn" id="11_648rf"]
 [ext_resource type="PackedScene" uid="uid://dn60c7wb5sjen" path="res://objetos/fonte_sinal.tscn" id="11_rc6gm"]
+[ext_resource type="Texture2D" uid="uid://cs6ku6til6r8w" path="res://addons/cenario/lixeira1.png" id="15_l38a8"]
+[ext_resource type="Script" uid="uid://cvefu0g5ojl0t" path="res://scripts/lixeira.gd" id="16_613l6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1574"]
 texture = ExtResource("1_c087g")
@@ -35,6 +38,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tv0sf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(41.200012, 37.999985)
+
 [node name="EditorCenario" type="Control" unique_id=790972427]
 layout_mode = 3
 anchors_preset = 8
@@ -46,7 +52,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="Panel" parent="." unique_id=1716173421]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2074002145]
+script = ExtResource("1_648rf")
+
+[node name="UI" type="Control" parent="Camera2D" unique_id=30759531]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="Panel" parent="Camera2D/UI" unique_id=1716173421]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 1
 anchors_preset = 8
@@ -54,10 +70,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_left = -980.0
+offset_top = -560.0
+offset_right = 940.0
+offset_bottom = 520.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -65,7 +81,8 @@ size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_f1574")
 
-[node name="Panel" type="Panel" parent="." unique_id=93998471]
+[node name="Panel" type="Panel" parent="Camera2D/UI" unique_id=93998471]
+z_index = 1
 layout_mode = 0
 offset_left = -529.0
 offset_top = 399.0
@@ -74,21 +91,24 @@ offset_bottom = 540.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ie5d1")
 
-[node name="FecharButton" parent="." unique_id=1356883158 instance=ExtResource("3_luy5i")]
+[node name="FecharButton" parent="Camera2D/UI" unique_id=1356883158 node_paths=PackedStringArray("no_pai") instance=ExtResource("3_luy5i")]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 827.0
-offset_top = -523.0
-offset_right = 939.0
-offset_bottom = -411.0
+offset_left = 807.0
+offset_top = -543.0
+offset_right = 919.0
+offset_bottom = -431.0
 grow_horizontal = 2
 grow_vertical = 2
+no_pai = NodePath("../../..")
 
-[node name="EsquerdaButton" type="Button" parent="." unique_id=621554983]
+[node name="EsquerdaButton" type="Button" parent="Camera2D/UI" unique_id=621554983]
+z_index = 1
 layout_mode = 0
 offset_left = -522.0
 offset_top = 449.0
@@ -100,7 +120,8 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_mggl4")
 icon = ExtResource("5_tl5uj")
 icon_alignment = 1
 
-[node name="DireiraButton" type="Button" parent="." unique_id=1887272092]
+[node name="DireiraButton" type="Button" parent="Camera2D/UI" unique_id=1887272092]
+z_index = 1
 layout_mode = 0
 offset_left = 584.0
 offset_top = 449.0
@@ -113,10 +134,11 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_tv0sf")
 icon = ExtResource("5_tl5uj")
 icon_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1528491819 node_paths=PackedStringArray("lista_nos")]
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/UI" unique_id=1528491819 node_paths=PackedStringArray("lista_nos")]
+z_index = 1
 layout_mode = 0
 offset_left = -459.0
-offset_top = 405.6
+offset_top = 405.59998
 offset_right = 521.0
 offset_bottom = 538.6
 offset_transform_position = Vector2(0, 65.5)
@@ -127,33 +149,53 @@ script = ExtResource("5_miamp")
 lista = Array[PackedScene]([ExtResource("11_rc6gm"), ExtResource("5_rc6gm"), ExtResource("6_miamp"), ExtResource("7_pfohb"), ExtResource("8_v0pkc"), ExtResource("9_l38a8"), ExtResource("10_613l6"), ExtResource("11_648rf"), ExtResource("7_rc6gm")])
 lista_nos = [NodePath("Control"), NodePath("Control2"), NodePath("Control3"), NodePath("Control4"), NodePath("Control5"), NodePath("Control6"), NodePath("Control7")]
 
-[node name="Control" type="Control" parent="HBoxContainer" unique_id=476676322]
+[node name="Control" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=476676322]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Control2" type="Control" parent="HBoxContainer" unique_id=998995857]
+[node name="Control2" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=998995857]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Control3" type="Control" parent="HBoxContainer" unique_id=504192515]
+[node name="Control3" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=504192515]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Control4" type="Control" parent="HBoxContainer" unique_id=789037700]
+[node name="Control4" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=789037700]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Control5" type="Control" parent="HBoxContainer" unique_id=508081973]
+[node name="Control5" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=508081973]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Control6" type="Control" parent="HBoxContainer" unique_id=836360393]
+[node name="Control6" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=836360393]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Control7" type="Control" parent="HBoxContainer" unique_id=1207555114]
+[node name="Control7" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=1207555114]
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="Camera2D/UI" unique_id=4690792]
+anchors_preset = 0
+offset_left = 827.0
+offset_top = 449.0
+offset_right = 867.0
+offset_bottom = 489.0
+
+[node name="Lixeira" type="Sprite2D" parent="Camera2D/UI/Control" unique_id=1276831032]
+position = Vector2(52.999996, 10.999999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("15_l38a8")
+script = ExtResource("16_613l6")
+
+[node name="Area2D" type="Area2D" parent="Camera2D/UI/Control/Lixeira" unique_id=640679199]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/UI/Control/Lixeira/Area2D" unique_id=1852731672]
+position = Vector2(0.6000366, 4.600067)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_f1574")
 
 [node name="Circuito" type="Control" parent="." unique_id=946407543 groups=["circuito"]]
 unique_name_in_owner = true
@@ -162,9 +204,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[connection signal="mouse_entered" from="EsquerdaButton" to="HBoxContainer" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="EsquerdaButton" to="HBoxContainer" method="_on_mouse_exited"]
-[connection signal="pressed" from="EsquerdaButton" to="HBoxContainer" method="_on_esquerda_button_pressed"]
-[connection signal="mouse_entered" from="DireiraButton" to="HBoxContainer" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="DireiraButton" to="HBoxContainer" method="_on_mouse_exited"]
-[connection signal="pressed" from="DireiraButton" to="HBoxContainer" method="_on_direira_button_pressed"]
+[connection signal="mouse_entered" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_exited"]
+[connection signal="pressed" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_esquerda_button_pressed"]
+[connection signal="mouse_entered" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_exited"]
+[connection signal="pressed" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_direira_button_pressed"]
+[connection signal="area_entered" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_body_exited"]

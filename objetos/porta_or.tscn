@@ -11,15 +11,25 @@ radius = 4.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
 size = Vector2(56, 42)
 
-[node name="PortaOr" type="Sprite2D" unique_id=2034512787]
+[node name="PortaOr" type="Sprite2D" unique_id=2034512787 node_paths=PackedStringArray("ligar")]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_efll8")
 script = ExtResource("2_ykh8f")
+ligar = [NodePath("Saida"), NodePath("Entrada1"), NodePath("Entrada2")]
 
 [node name="SaidaLigacao" type="Node2D" parent="." unique_id=507149804]
 unique_name_in_owner = true
 
+[node name="Saida" type="Area2D" parent="." unique_id=1958918021 groups=["saida"]]
+process_mode = 4
+position = Vector2(41, 0)
+script = ExtResource("3_ykh8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" unique_id=1534949111]
+shape = SubResource("CircleShape2D_kri5b")
+
 [node name="Entrada1" type="Area2D" parent="." unique_id=1160757067 groups=["entrada"]]
+process_mode = 4
 position = Vector2(-41, -10)
 script = ExtResource("3_3fld5")
 
@@ -27,17 +37,11 @@ script = ExtResource("3_3fld5")
 shape = SubResource("CircleShape2D_kri5b")
 
 [node name="Entrada2" type="Area2D" parent="." unique_id=902895615 groups=["entrada"]]
+process_mode = 4
 position = Vector2(-41, 10)
 script = ExtResource("3_3fld5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada2" unique_id=1575014604]
-shape = SubResource("CircleShape2D_kri5b")
-
-[node name="Saida" type="Area2D" parent="." unique_id=1958918021 groups=["saida"]]
-position = Vector2(41, 0)
-script = ExtResource("3_ykh8f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" unique_id=1534949111]
 shape = SubResource("CircleShape2D_kri5b")
 
 [node name="ArrastarArea" type="Area2D" parent="." unique_id=1452741784]
@@ -46,12 +50,12 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=1224765122]
 shape = SubResource("RectangleShape2D_f1574")
 
+[connection signal="input_event" from="Saida" to="Saida" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida" to="Saida" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida" to="Saida" method="_on_mouse_exited"]
 [connection signal="input_event" from="Entrada1" to="Entrada1" method="_on_input_event"]
 [connection signal="mouse_entered" from="Entrada1" to="Entrada1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Entrada1" to="Entrada1" method="_on_mouse_exited"]
 [connection signal="input_event" from="Entrada2" to="Entrada2" method="_on_input_event"]
 [connection signal="mouse_entered" from="Entrada2" to="Entrada2" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Entrada2" to="Entrada2" method="_on_mouse_exited"]
-[connection signal="input_event" from="Saida" to="Saida" method="_on_input_event"]
-[connection signal="mouse_entered" from="Saida" to="Saida" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Saida" to="Saida" method="_on_mouse_exited"]

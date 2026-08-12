@@ -5,6 +5,7 @@ var linha:Conexao = null
 var id_porta = null
 var mouse_padrao = "res://addons/cursores/Arrow2.png"
 var mouse_selecao = "res://addons/cursores/Hand1.png"
+var mouse_mover = "res://addons/cursores/mover_arrow.png"
 
 
 # Called when the node enters the scene tree for the first time.

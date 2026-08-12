@@ -17,15 +17,17 @@ radius = 4.1231055
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
 size = Vector2(54, 42)
 
-[node name="PortaAnd" type="Sprite2D" unique_id=1581419183]
+[node name="PortaAnd" type="Sprite2D" unique_id=1581419183 node_paths=PackedStringArray("ligar")]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_amh64")
 script = ExtResource("2_teanx")
+ligar = [NodePath("Saida"), NodePath("Entrada1"), NodePath("Entrada2")]
 
 [node name="SaidaLigacao" type="Node2D" parent="." unique_id=454830190]
 unique_name_in_owner = true
 
 [node name="Saida" type="Area2D" parent="." unique_id=702433167 groups=["saida"]]
+process_mode = 4
 position = Vector2(41, 0)
 script = ExtResource("2_42eg7")
 
@@ -33,6 +35,7 @@ script = ExtResource("2_42eg7")
 shape = SubResource("CircleShape2D_teanx")
 
 [node name="Entrada1" type="Area2D" parent="." unique_id=1933608632 groups=["entrada"]]
+process_mode = 4
 position = Vector2(-41, -10)
 script = ExtResource("4_teanx")
 
@@ -40,6 +43,7 @@ script = ExtResource("4_teanx")
 shape = SubResource("CircleShape2D_xl6u4")
 
 [node name="Entrada2" type="Area2D" parent="." unique_id=921075585 groups=["entrada"]]
+process_mode = 4
 position = Vector2(-41, 10)
 script = ExtResource("4_teanx")
 

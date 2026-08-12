@@ -10,12 +10,14 @@ radius = 3.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
 size = Vector2(43, 49)
 
-[node name="ReceptorSinal" type="Sprite2D" unique_id=1608594445]
+[node name="ReceptorSinal" type="Sprite2D" unique_id=1608594445 node_paths=PackedStringArray("ligar")]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_2c27v")
 script = ExtResource("2_bd05w")
+ligar = [NodePath("Entrada")]
 
 [node name="Entrada" type="Area2D" parent="." unique_id=929402223]
+process_mode = 4
 position = Vector2(-25, 15)
 script = ExtResource("2_t3odr")
 
