@@ -16,3 +16,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		get_tree().quit()
+
+func mudar_mouse_selecao() -> void:
+	Input.set_custom_mouse_cursor(load(mouse_selecao),Input.CURSOR_ARROW,Vector2(15,0))
+
+func mudar_mouse_mover() -> void:
+	Input.set_custom_mouse_cursor(load(mouse_mover))
+
+func mudar_mouse_padrao() -> void:
+	Input.set_custom_mouse_cursor(load(mouse_padrao))

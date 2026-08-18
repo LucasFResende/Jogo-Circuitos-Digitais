@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(load(Global.mouse_selecao),Input.CURSOR_ARROW,Vector2(15,0))
+	Global.mudar_mouse_selecao()
 
 
 func _on_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(load(Global.mouse_padrao))
+	Global.mudar_mouse_padrao()

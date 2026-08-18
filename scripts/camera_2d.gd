@@ -12,11 +12,11 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("btn_meio"):
 		esta_movendo = true
 		mouse_anterior = get_viewport().get_mouse_position()
-		Input.set_custom_mouse_cursor(load(Global.mouse_mover))
+		Global.mudar_mouse_mover()
 
 	elif Input.is_action_just_released("btn_meio"):
 		esta_movendo = false
-		Input.set_custom_mouse_cursor(load(Global.mouse_padrao))
+		Global.mudar_mouse_padrao()
 
 	if esta_movendo:
 		var mouse_atual := get_viewport().get_mouse_position()
