@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://dn60c7wb5sjen" path="res://objetos/fonte_sinal.tscn" id="11_rc6gm"]
 [ext_resource type="Texture2D" uid="uid://cs6ku6til6r8w" path="res://addons/cenario/lixeira1.png" id="15_l38a8"]
 [ext_resource type="Script" uid="uid://cvefu0g5ojl0t" path="res://scripts/lixeira.gd" id="16_613l6"]
+[ext_resource type="Texture2D" uid="uid://b2olvjji2h5hw" path="res://addons/cenario/confirmar_hover.png" id="18_kkdjs"]
+[ext_resource type="Script" uid="uid://b1xrsply84sjw" path="res://scripts/circuito.gd" id="18_rmqxn"]
+[ext_resource type="Texture2D" uid="uid://diarwgtcvba6k" path="res://addons/cenario/confirmar.png" id="19_mcjft"]
+[ext_resource type="Script" uid="uid://bdr0qiakmd6ef" path="res://scripts/saidas.gd" id="21_mcjft"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1574"]
 texture = ExtResource("1_c087g")
@@ -37,6 +41,15 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_613l6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tv0sf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kkdjs"]
+texture = ExtResource("19_mcjft")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie5d1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_texfu"]
+texture = ExtResource("18_kkdjs")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
 size = Vector2(41.200012, 37.999985)
@@ -134,6 +147,18 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_tv0sf")
 icon = ExtResource("5_tl5uj")
 icon_alignment = 1
 
+[node name="ConfirmarButton" type="Button" parent="Camera2D/UI" unique_id=1880509662]
+layout_mode = 0
+offset_left = -960.00006
+offset_top = 432.0
+offset_right = -888.00006
+offset_bottom = 504.0
+scale = Vector2(1.5, 1.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_kkdjs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ie5d1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_texfu")
+icon_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/UI" unique_id=1528491819 node_paths=PackedStringArray("lista_nos")]
 z_index = 1
 layout_mode = 0
@@ -197,12 +222,44 @@ position = Vector2(0.6000366, 4.600067)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_f1574")
 
-[node name="Circuito" type="Control" parent="." unique_id=946407543 groups=["circuito"]]
+[node name="ErroDialog" type="AcceptDialog" parent="Camera2D/UI" unique_id=1577191128]
+unique_name_in_owner = true
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(400, 300)
+ok_button_text = "OK"
+dialog_text = "A resposta está errada"
+
+[node name="Circuito" type="Control" parent="." unique_id=946407543 node_paths=PackedStringArray("no_pai") groups=["circuito"]]
 unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
+script = ExtResource("18_rmqxn")
+no_pai = NodePath("..")
+resp_quantidade_entradas = 2
+resp_quantidade_saida = 1
+respostas_saidas = Array[Array]([[0], [0], [0], [1]])
+
+[node name="Entradas" type="Control" parent="Circuito" unique_id=359771390]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Saidas" type="Control" parent="Circuito" unique_id=329582617]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("21_mcjft")
+
+[node name="Portas" type="Control" parent="Circuito" unique_id=202280849]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="mouse_entered" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_exited"]
@@ -210,6 +267,7 @@ mouse_filter = 2
 [connection signal="mouse_entered" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_exited"]
 [connection signal="pressed" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_direira_button_pressed"]
+[connection signal="pressed" from="Camera2D/UI/ConfirmarButton" to="Circuito" method="_on_confirmar_button_pressed"]
 [connection signal="area_entered" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_body_entered"]

@@ -15,6 +15,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_2c27v")
 script = ExtResource("2_bd05w")
 ligar = [NodePath("Entrada")]
+tipo = 1
 
 [node name="Entrada" type="Area2D" parent="." unique_id=929402223]
 process_mode = 4

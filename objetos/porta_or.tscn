@@ -16,6 +16,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_efll8")
 script = ExtResource("2_ykh8f")
 ligar = [NodePath("Saida"), NodePath("Entrada1"), NodePath("Entrada2")]
+tipo = 6
 
 [node name="SaidaLigacao" type="Node2D" parent="." unique_id=507149804]
 unique_name_in_owner = true

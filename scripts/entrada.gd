@@ -23,6 +23,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		Global.esta_ligando_portas = false
 		Global.id_porta = -1
 		Global.linha.porta_entrada = self
+		Global.linha.porta_logica_entrada = get_parent()
 		linha_ligada = Global.linha
 		quantidade_linha_ligado+=1
 

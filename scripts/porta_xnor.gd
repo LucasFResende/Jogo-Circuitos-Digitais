@@ -9,3 +9,5 @@ func verificar_logica() -> void:
 	var valor2 = $Entrada2.sinal
 	sinal = (!valor1 and !valor2) or (valor1 and valor2)
 	$Saida.sinal = sinal
+	for child in %SaidaLigacao.get_children():
+		child.atualizar()

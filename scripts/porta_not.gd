@@ -8,3 +8,5 @@ func verificar_logica() -> void:
 	var valor1 = $Entrada1.sinal
 	sinal = !valor1
 	$Saida.sinal = sinal
+	for child in %SaidaLigacao.get_children():
+		child.atualizar()
