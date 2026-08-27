@@ -3,12 +3,13 @@ extends Control
 @onready var entradas: Control = %Entradas
 @onready var saidas: Saidas = %Saidas
 @onready var portas: Control = %Portas
-@onready var dialogo: AcceptDialog = %ErroDialog
+@onready var dialogo: AcceptDialog = %Dialog
+@onready var fechar:FecharButton = $"../Camera2D/UI/FecharButton"
 @export var no_pai:Control
 
-@export var resp_quantidade_entradas: int
-@export var resp_quantidade_saida: int
-@export var respostas_saidas: Array[Array]
+var resp_quantidade_entradas: int
+var resp_quantidade_saida: int
+var respostas_certas: Array
 
 var possibilidades_entradas: Array = []
 var quantidade_entradas: int = 0
@@ -17,8 +18,17 @@ var resposta_certa:bool = false
 
 var saida: Array = []
 
-signal fechar
 
+func _ready() -> void:
+	if !Missoes.completo:
+		resp_quantidade_entradas = Missoes.entradas
+		resp_quantidade_saida = Missoes.saidas
+		respostas_certas = Missoes.resposta
+	else:
+		%ConfirmarButton.disabled = true
+		%ConfirmarButton.visible = false
+		
+	
 func _on_confirmar_button_pressed() -> void:
 	verificar_resposta()
 
@@ -66,25 +76,25 @@ func verificar_resposta() -> void:
 	print("================================")
 	print("SIMULAÇÃO TERMINADA")
 	print("Resultados: ", saida)
-	print("Esperado: ", respostas_saidas)
+	print("Esperado: ", respostas_certas)
 	print("================================")
 
 	verificar_resultado()
 
 
 func verificar_resultado() -> void:
-	if saida.size() != respostas_saidas.size():
+	if saida.size() != respostas_certas.size():
 		return
 
 	for i in range(saida.size()):
 		var resultado = saida[i]
 
-		if resultado != respostas_saidas[i]:
+		if resultado != respostas_certas[i]:
 			dialogo.dialog_text = "
 			RESPOSTA ERRADA\n
-			Esperado: " + str(respostas_saidas[i]) + "
+			Esperado: " + str(respostas_certas[i]) + "
 			\nRecebido: "+ str(resultado)+ "
-			\nEsperado: "+ str(respostas_saidas)+"
+			\nEsperado: "+ str(respostas_certas)+"
 			\nResultado: "+ str(saida)
 			dialogo.visible = true
 			return
@@ -92,6 +102,8 @@ func verificar_resultado() -> void:
 	dialogo.dialog_text = "ACERTOU"
 	dialogo.visible = true
 	resposta_certa = true
+	Missoes.completo = true
+	Missoes.atualizar_arquivo()
 
 
 func gerar_possibilidades(quantidade: int) -> Array:
@@ -114,5 +126,4 @@ func gerar_possibilidades(quantidade: int) -> Array:
 func _process(delta: float) -> void:
 	if resposta_certa:
 		await dialogo.confirmed
-		fechar.emit()
-		no_pai.call_deferred("queue_free")
+		fechar.fechar_no()

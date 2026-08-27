@@ -148,6 +148,7 @@ icon = ExtResource("5_tl5uj")
 icon_alignment = 1
 
 [node name="ConfirmarButton" type="Button" parent="Camera2D/UI" unique_id=1880509662]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -960.00006
 offset_top = 432.0
@@ -222,7 +223,7 @@ position = Vector2(0.6000366, 4.600067)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_f1574")
 
-[node name="ErroDialog" type="AcceptDialog" parent="Camera2D/UI" unique_id=1577191128]
+[node name="Dialog" type="AcceptDialog" parent="Camera2D/UI" unique_id=1577191128]
 unique_name_in_owner = true
 oversampling_override = 1.0
 initial_position = 2
@@ -238,9 +239,6 @@ offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("18_rmqxn")
 no_pai = NodePath("..")
-resp_quantidade_entradas = 2
-resp_quantidade_saida = 1
-respostas_saidas = Array[Array]([[0], [0], [0], [1]])
 
 [node name="Entradas" type="Control" parent="Circuito" unique_id=359771390]
 unique_name_in_owner = true

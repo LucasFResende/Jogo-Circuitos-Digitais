@@ -8,5 +8,4 @@ func verificar_logica() -> void:
 	$Saida.sinal = sinal
 
 	for child in %SaidaLigacao.get_children():
-		print("Propagando pela conexão: ", child.name)
 		child.atualizar()

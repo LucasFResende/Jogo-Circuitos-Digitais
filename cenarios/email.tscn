@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b6n78ek0i603e" path="res://scripts/email.gd" id="1_1ousk"]
 [ext_resource type="Texture2D" uid="uid://opbv2f6hy2q3" path="res://addons/cenario/UI-computador-email.png" id="1_rd1h1"]
 [ext_resource type="Script" uid="uid://cvmbhhkjs52q3" path="res://scripts/fechar_email_button.gd" id="2_rd1h1"]
-[ext_resource type="PackedScene" uid="uid://cjb7v1gup1skw" path="res://cenarios/email_mini.tscn" id="4_r7soh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1574"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -45,7 +44,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_f1574")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rd1h1")
 script = ExtResource("2_rd1h1")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2091398217]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2091398217 groups=["Emails"]]
 layout_mode = 0
 offset_left = 52.0
 offset_top = 143.0
@@ -56,13 +55,8 @@ offset_bottom = 1006.0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1815, 0)
 layout_mode = 2
-theme_override_constants/separation = 100
-
-[node name="EmailMini" parent="ScrollContainer/ContainerEmail" unique_id=343686397 instance=ExtResource("4_r7soh")]
-layout_mode = 2
-
-[node name="EmailMini2" parent="ScrollContainer/ContainerEmail" unique_id=103757882 instance=ExtResource("4_r7soh")]
-layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
 
 [connection signal="mouse_entered" from="FecharEmailButton" to="FecharEmailButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="FecharEmailButton" to="FecharEmailButton" method="_on_mouse_exited"]

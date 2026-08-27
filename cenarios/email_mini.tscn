@@ -1,25 +1,71 @@
 [gd_scene format=3 uid="uid://cjb7v1gup1skw"]
 
 [ext_resource type="Texture2D" uid="uid://dh75yv56t56s5" path="res://addons/cenario/UI-email-mini.png" id="1_ybt5s"]
+[ext_resource type="Texture2D" uid="uid://cfhnxcujqf57g" path="res://addons/cenario/email_indicador_baixo.png" id="2_hf325"]
+[ext_resource type="Texture2D" uid="uid://bbjyms8qlwes7" path="res://addons/cenario/email_indicador_direita.png" id="3_qikdx"]
+[ext_resource type="Script" uid="uid://b8apnphgl7qkc" path="res://scripts/email_mini.gd" id="4_s761e"]
+[ext_resource type="Texture2D" uid="uid://chdcdww1ovbiq" path="res://addons/cenario/completo.png" id="5_lrnon"]
 
-[node name="EmailMini" type="Control" unique_id=343686397]
-layout_mode = 3
+[sub_resource type="Theme" id="Theme_f1574"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1574"]
+texture = ExtResource("1_ybt5s")
+
+[sub_resource type="FoldableGroup" id="FoldableGroup_texfu"]
+allow_folding_all = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7soh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kedoi"]
+bg_color = Color(0.3032328, 0.30323285, 0.30323276, 1)
+
+[node name="EmailMini" type="FoldableContainer" unique_id=176075540]
+custom_maximum_size = Vector2(1810, -1)
+clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_f1574")
+theme_override_constants/h_separation = 10
+theme_override_font_sizes/font_size = 70
+theme_override_icons/expanded_arrow = ExtResource("2_hf325")
+theme_override_icons/folded_arrow = ExtResource("3_qikdx")
+theme_override_styles/title_panel = SubResource("StyleBoxTexture_f1574")
+theme_override_styles/title_hover_panel = SubResource("StyleBoxTexture_f1574")
+theme_override_styles/title_collapsed_panel = SubResource("StyleBoxTexture_f1574")
+theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_f1574")
+title = "PlaceHolder"
+foldable_group = SubResource("FoldableGroup_texfu")
+script = ExtResource("4_s761e")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=67663165]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -912.5
-offset_right = 907.5
-offset_bottom = 95.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_ybt5s")
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=68982683]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1077488596]
+custom_minimum_size = Vector2(1912, 0)
+custom_maximum_size = Vector2(1912, -1)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=691647597]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7soh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kedoi")
+text = "ACEITAR"
+
+[node name="Completo" type="Sprite2D" parent="." unique_id=1701609975]
+unique_name_in_owner = true
+visible = false
+position = Vector2(1810, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_lrnon")
+centered = false
+offset = Vector2(-70, 0)
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
