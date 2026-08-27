@@ -4,7 +4,6 @@ var contador_email:int = 10
 var tem_email:bool = contador_email
 var foldable_group: FoldableGroup
 @onready var cena_email = load("res://cenarios/email_mini.tscn")
-@onready var missoes:JSON = load("res://dados/missoes.json")
 @onready var container_email = %ContainerEmail
 
 # Called when the node enters the scene tree for the first time.
@@ -12,8 +11,8 @@ func _ready() -> void:
 	if tem_email:
 		foldable_group = FoldableGroup.new()
 		foldable_group.allow_folding_all = true
-		for i in range(len(missoes.data)):
-			var data = missoes.data[str(i+1)]
+		for i in range(len(Missoes.missoes)):
+			var data = Missoes.missoes[str(i+1)]
 			if data["liberado"]:
 				var email = cena_email.instantiate() as EmailMini
 				email.id = str(i+1)
