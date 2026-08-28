@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ybhugsefn1q" path="res://addons/portas_logicas/receptor_sinal1.png" id="1_2c27v"]
 [ext_resource type="Script" uid="uid://cry5i0favdibq" path="res://scripts/receptor_sinal.gd" id="2_bd05w"]
 [ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="2_t3odr"]
+[ext_resource type="Script" uid="uid://o4wedqo7378d" path="res://scripts/adaptar_label.gd" id="4_skohk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f1574"]
 radius = 3.0
@@ -32,6 +33,27 @@ position = Vector2(11, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=1608005970]
 position = Vector2(-3.5, -0.5)
 shape = SubResource("RectangleShape2D_f1574")
+
+[node name="Variavel" type="Label" parent="." unique_id=1748796036]
+unique_name_in_owner = true
+visible = false
+offset_left = 30.666666
+offset_top = -8.666668
+offset_right = 54.00934
+offset_bottom = 14.333332
+scale = Vector2(0.714, 0.714)
+text = "X1"
+script = ExtResource("4_skohk")
+
+[node name="Nome" type="Label" parent="." unique_id=1355457599]
+unique_name_in_owner = true
+offset_left = -13.0
+offset_top = -44.0
+offset_right = 57.0
+offset_bottom = -21.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Receptor"
+script = ExtResource("4_skohk")
 
 [connection signal="input_event" from="Entrada" to="Entrada" method="_on_input_event"]
 [connection signal="mouse_entered" from="Entrada" to="Entrada" method="_on_mouse_entered"]

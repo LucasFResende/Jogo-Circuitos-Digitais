@@ -9,12 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cibnqtuc4dgq8" path="res://addons/cenario/seta.png" id="5_tl5uj"]
 [ext_resource type="PackedScene" uid="uid://cgdlbfcdpeni2" path="res://objetos/porta_nand.tscn" id="6_miamp"]
 [ext_resource type="PackedScene" uid="uid://dqqn0f37jrurl" path="res://objetos/porta_nor.tscn" id="7_pfohb"]
-[ext_resource type="PackedScene" uid="uid://cfks82n2ykoe6" path="res://objetos/receptor_sinal.tscn" id="7_rc6gm"]
 [ext_resource type="PackedScene" uid="uid://chbvjwgwihu33" path="res://objetos/porta_not.tscn" id="8_v0pkc"]
 [ext_resource type="PackedScene" uid="uid://dojaf0u8vki8r" path="res://objetos/porta_or.tscn" id="9_l38a8"]
 [ext_resource type="PackedScene" uid="uid://balvo76xl87jm" path="res://objetos/porta_xnor.tscn" id="10_613l6"]
 [ext_resource type="PackedScene" uid="uid://bmasn50rrds44" path="res://objetos/porta_xor.tscn" id="11_648rf"]
-[ext_resource type="PackedScene" uid="uid://dn60c7wb5sjen" path="res://objetos/fonte_sinal.tscn" id="11_rc6gm"]
 [ext_resource type="Texture2D" uid="uid://cs6ku6til6r8w" path="res://addons/cenario/lixeira1.png" id="15_l38a8"]
 [ext_resource type="Script" uid="uid://cvefu0g5ojl0t" path="res://scripts/lixeira.gd" id="16_613l6"]
 [ext_resource type="Texture2D" uid="uid://b2olvjji2h5hw" path="res://addons/cenario/confirmar_hover.png" id="18_kkdjs"]
@@ -172,7 +170,7 @@ mouse_filter = 2
 theme_override_constants/separation = 140
 alignment = 1
 script = ExtResource("5_miamp")
-lista = Array[PackedScene]([ExtResource("11_rc6gm"), ExtResource("5_rc6gm"), ExtResource("6_miamp"), ExtResource("7_pfohb"), ExtResource("8_v0pkc"), ExtResource("9_l38a8"), ExtResource("10_613l6"), ExtResource("11_648rf"), ExtResource("7_rc6gm")])
+lista = Array[PackedScene]([ExtResource("5_rc6gm"), ExtResource("6_miamp"), ExtResource("7_pfohb"), ExtResource("8_v0pkc"), ExtResource("9_l38a8"), ExtResource("10_613l6"), ExtResource("11_648rf")])
 lista_nos = [NodePath("Control"), NodePath("Control2"), NodePath("Control3"), NodePath("Control4"), NodePath("Control5"), NodePath("Control6"), NodePath("Control7")]
 
 [node name="Control" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=476676322]

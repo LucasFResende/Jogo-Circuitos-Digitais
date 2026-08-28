@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://rats2iymkmc8" path="res://scripts/porta_not.gd" id="2_o2ckj"]
 [ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="3_boejh"]
 [ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_o2ckj"]
+[ext_resource type="Script" uid="uid://o4wedqo7378d" path="res://scripts/adaptar_label.gd" id="5_boejh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iyca6"]
 radius = 4.0
@@ -46,6 +47,16 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=594746939]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_f1574")
+
+[node name="Nome" type="Label" parent="." unique_id=577417725]
+unique_name_in_owner = true
+offset_left = -19.0
+offset_top = -35.0
+offset_right = 21.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "NOT"
+script = ExtResource("5_boejh")
 
 [connection signal="input_event" from="Saida" to="Saida" method="_on_input_event"]
 [connection signal="mouse_entered" from="Saida" to="Saida" method="_on_mouse_entered"]

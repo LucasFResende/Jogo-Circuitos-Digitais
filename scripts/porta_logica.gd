@@ -17,6 +17,7 @@ var atualizando: bool = false
 @onready var entradas:Control = circuito.get_child(0)
 @onready var saidas:Control = circuito.get_child(1)
 @onready var portas:Control = circuito.get_child(2)
+@onready var nome:Label = %Nome
 
 
 enum TIPO {ENTRADA, SAIDA, AND, NAND, NOR, NOT, OR, XNOR, XOR}
@@ -41,6 +42,7 @@ func _input(event: InputEvent) -> void:
 					saidas.add_child(novo_no)
 				else:
 					portas.add_child(novo_no)
+				novo_no.adicionar()
 				novo_no.global_position = posicao_final
 				novo_no.pode_duplicar = false
 				novo_no.iniciar_no()
@@ -74,3 +76,6 @@ func verificar_logica() -> void:
 func iniciar_no() -> void:
 	for area in ligar:
 		area.process_mode = Node.PROCESS_MODE_INHERIT
+	
+func adicionar() -> void:
+	nome.set("theme_override_colors/font_color",Color.WHITE)

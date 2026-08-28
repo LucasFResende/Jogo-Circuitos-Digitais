@@ -10,6 +10,8 @@ extends Control
 var resp_quantidade_entradas: int
 var resp_quantidade_saida: int
 var respostas_certas: Array
+const FONTE_SINAL = preload("res://objetos/fonte_sinal.tscn")
+const RECEPTOR_SINAL = preload("res://objetos/receptor_sinal.tscn")
 
 var possibilidades_entradas: Array = []
 var quantidade_entradas: int = 0
@@ -21,13 +23,19 @@ var saida: Array = []
 
 func _ready() -> void:
 	if !Missoes.completo:
-		resp_quantidade_entradas = Missoes.entradas
-		resp_quantidade_saida = Missoes.saidas
+		if Missoes.entradas:
+			iniciar_entradas(Missoes.entradas)
+		if Missoes.saidas:
+			iniciar_saidas(Missoes.saidas)
 		respostas_certas = Missoes.resposta
 	else:
 		%ConfirmarButton.disabled = true
 		%ConfirmarButton.visible = false
 		
+func _process(delta: float) -> void:
+	if resposta_certa:
+		await dialogo.confirmed
+		fechar.fechar_no()
 	
 func _on_confirmar_button_pressed() -> void:
 	verificar_resposta()
@@ -123,7 +131,21 @@ func gerar_possibilidades(quantidade: int) -> Array:
 
 	return resultado
 	
-func _process(delta: float) -> void:
-	if resposta_certa:
-		await dialogo.confirmed
-		fechar.fechar_no()
+func iniciar_entradas(quant_entradas: int) -> void:
+	var pos_ini: Vector2 = Vector2(140,100)
+	var x = 65
+	for i in range(quant_entradas):
+		var entrada:FonteSinal = FONTE_SINAL.instantiate()
+		entradas.add_child(entrada)
+		entrada.global_position = pos_ini+ Vector2(0,80)*i
+		entrada.pode_duplicar = false
+		entrada.set_nome(String.chr(x+i))
+
+func iniciar_saidas(quant_saidas: int) -> void:
+	var pos_ini:Vector2 = Vector2(1300,100)
+	for i in range(quant_saidas):
+		var saida:ReceptorSinal = RECEPTOR_SINAL.instantiate()
+		saidas.add_child(saida)
+		saida.global_position = pos_ini + Vector2(0,80)*i
+		saida.pode_duplicar = false
+		saida.adicionar()

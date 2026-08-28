@@ -2,9 +2,15 @@ extends HBoxContainer
 
 @export var lista: Array[PackedScene]
 var offset:int = 0
-@export var lista_nos:Array[Control] 
+@export var lista_nos:Array[Control]
+
+@onready var fonte:PackedScene = load("res://objetos/fonte_sinal.tscn")
+@onready var receptor:PackedScene = load("res://objetos/receptor_sinal.tscn")
 
 func _ready() -> void:
+	if Missoes.completo:
+		var temp: Array[PackedScene] = [fonte, receptor]
+		lista = temp+lista
 	atualizar_lista_exibida()
 
 func atualizar_lista_exibida() -> void:
