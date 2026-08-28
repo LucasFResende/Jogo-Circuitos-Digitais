@@ -15,11 +15,12 @@ size = Vector2(53, 54)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie5d1"]
 size = Vector2(20, 18)
 
-[node name="FonteSinal" type="Sprite2D" unique_id=766838194]
+[node name="FonteSinal" type="Sprite2D" unique_id=766838194 node_paths=PackedStringArray("ligar")]
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_wa0ky")
 flip_h = true
 script = ExtResource("2_4o7b4")
+ligar = [NodePath("Saida"), NodePath("ButaoLigarDesligar")]
 
 [node name="SaidaLigacao" type="Node2D" parent="." unique_id=625803256]
 unique_name_in_owner = true

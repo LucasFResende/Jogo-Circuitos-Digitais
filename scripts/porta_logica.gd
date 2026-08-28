@@ -42,10 +42,9 @@ func _input(event: InputEvent) -> void:
 					saidas.add_child(novo_no)
 				else:
 					portas.add_child(novo_no)
-				novo_no.adicionar()
 				novo_no.global_position = posicao_final
 				novo_no.pode_duplicar = false
-				novo_no.iniciar_no()
+				novo_no.adicionar()
 				if esta_sobre_lixeira:
 					novo_no.call_deferred("queue_free")
 			else:
@@ -79,3 +78,4 @@ func iniciar_no() -> void:
 	
 func adicionar() -> void:
 	nome.set("theme_override_colors/font_color",Color.WHITE)
+	iniciar_no()

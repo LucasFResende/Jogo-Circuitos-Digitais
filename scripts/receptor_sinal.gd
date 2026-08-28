@@ -25,3 +25,4 @@ func adicionar() -> void:
 	var quantidade:int = get_parent().get_child_count()
 	set_variavel("X"+str(quantidade))
 	nome.set("theme_override_colors/font_color",Color.WHITE)
+	iniciar_no()

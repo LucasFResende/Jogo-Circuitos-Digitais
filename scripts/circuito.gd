@@ -46,17 +46,6 @@ func verificar_resposta() -> void:
 	quantidade_entradas = entradas.get_child_count()
 	quantidade_saidas = saidas.get_child_count()
 
-	# Verifica se a quantidade está correta
-	if quantidade_entradas != resp_quantidade_entradas:
-		dialogo.dialog_text = "Quantidade de entradas errada"
-		dialogo.visible = true
-		return
-
-	if quantidade_saidas != resp_quantidade_saida:
-		dialogo.dialog_text = "Quantidade de saidas errada"
-		dialogo.visible = true
-		return
-
 	# Gera todas as combinações possíveis
 	possibilidades_entradas = gerar_possibilidades(quantidade_entradas)
 
@@ -69,14 +58,22 @@ func verificar_resposta() -> void:
 
 	for possibilidade in possibilidades_entradas:
 
+		for i in range(quantidade_saidas):
+			var saida_porta: PortaLogica = saidas.get_child(i)
+			saida_porta.atualizando = true
+		
 		for i in range(quantidade_entradas):
 			var entrada: FonteSinal = entradas.get_child(i)
 			entrada.definir_sinal(possibilidade[i])
-
+			
 		var resultado_saida: Array = []
 
 		for i in range(quantidade_saidas):
 			var saida_porta: PortaLogica = saidas.get_child(i)
+			if saida_porta.atualizando:
+				dialogo.dialog_text = "Não existe caminho até a saída"
+				dialogo.visible = true
+				return
 			resultado_saida.append(1 if saida_porta.sinal else 0)
 
 		saida.append(resultado_saida)
@@ -91,9 +88,6 @@ func verificar_resposta() -> void:
 
 
 func verificar_resultado() -> void:
-	if saida.size() != respostas_certas.size():
-		return
-
 	for i in range(saida.size()):
 		var resultado = saida[i]
 
@@ -139,7 +133,7 @@ func iniciar_entradas(quant_entradas: int) -> void:
 		entradas.add_child(entrada)
 		entrada.global_position = pos_ini+ Vector2(0,80)*i
 		entrada.pode_duplicar = false
-		entrada.set_nome(String.chr(x+i))
+		entrada.adicionar()
 
 func iniciar_saidas(quant_saidas: int) -> void:
 	var pos_ini:Vector2 = Vector2(1300,100)
