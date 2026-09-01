@@ -61,7 +61,7 @@ func carregar_arquivo() -> void:
 		missoes = {}
 
 
-func atualizar_missao(id: String) -> void:
+func aceitar_missao(id: String) -> void:
 	id_missao_ativa = id
 
 	dados = missoes[id_missao_ativa]
@@ -79,6 +79,13 @@ func padronizar_dados() -> void:
 		for i in range(len(x)):
 			x[i] = int(x[i])
 
+func repetir_missao(id) -> void:
+	id_missao_ativa = id
+	dados = missoes[id]
+	completo = false
+	dados["completo"] = false
+	atualizar_arquivo()
+	aceitar_missao(id)
 
 func atualizar_arquivo() -> void:
 	dados["completo"] = completo
@@ -95,3 +102,6 @@ func atualizar_arquivo() -> void:
 
 	arquivo.store_string(JSON.stringify(missoes, "\t"))
 	arquivo.close()
+
+func verificar_completo(id: String) -> bool:
+	return missoes[id]["completo"]

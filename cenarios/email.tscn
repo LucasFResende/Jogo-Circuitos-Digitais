@@ -58,6 +58,35 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 5
 
+[node name="AceitarDialogo" type="AcceptDialog" parent="." unique_id=176044105]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "MENSAGEM!"
+initial_position = 5
+size = Vector2i(300, 150)
+dialog_text = "Missão ativa!
+Vá para o editor de circuitos."
+
+[node name="RepetirDialogo" type="AcceptDialog" parent="." unique_id=1450465917]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "MENSAGEM!"
+initial_position = 5
+size = Vector2i(300, 150)
+dialog_text = "Missão aceita e pronta para repetir.
+Vá para o editor de circuitos.
+"
+
+[node name="AvisoDialogo" type="AcceptDialog" parent="." unique_id=1974720473]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "ALERTA!"
+initial_position = 4
+size = Vector2i(300, 132)
+max_size = Vector2i(300, 150)
+dialog_text = "Para repetir a missão primeiro precisa completar ela."
+dialog_autowrap = true
+
 [connection signal="mouse_entered" from="FecharEmailButton" to="FecharEmailButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="FecharEmailButton" to="FecharEmailButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="FecharEmailButton" to="FecharEmailButton" method="_on_pressed"]

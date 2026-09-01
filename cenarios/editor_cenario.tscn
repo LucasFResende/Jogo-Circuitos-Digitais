@@ -227,8 +227,10 @@ oversampling_override = 1.0
 title = "SISTEMA"
 initial_position = 2
 size = Vector2i(400, 300)
+max_size = Vector2i(400, 300)
 ok_button_text = "OK"
 dialog_text = "A resposta está errada"
+dialog_autowrap = true
 
 [node name="Circuito" type="Control" parent="." unique_id=946407543 node_paths=PackedStringArray("no_pai") groups=["circuito"]]
 unique_name_in_owner = true

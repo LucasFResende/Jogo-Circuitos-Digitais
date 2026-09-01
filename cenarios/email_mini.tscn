@@ -50,7 +50,11 @@ custom_maximum_size = Vector2(1912, -1)
 layout_mode = 2
 autowrap_mode = 3
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=691647597]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1202108725]
+layout_mode = 2
+alignment = 1
+
+[node name="AceitarButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=691647597]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -58,6 +62,15 @@ size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_r7soh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kedoi")
 text = "ACEITAR"
+
+[node name="RepetirButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2080586918]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7soh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kedoi")
+text = "REPETIR"
 
 [node name="Completo" type="Sprite2D" parent="." unique_id=1701609975]
 unique_name_in_owner = true
@@ -68,4 +81,5 @@ texture = ExtResource("5_lrnon")
 centered = false
 offset = Vector2(-70, 0)
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/AceitarButton" to="." method="_on_aceitar_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RepetirButton" to="." method="_on_repetir_button_pressed"]
