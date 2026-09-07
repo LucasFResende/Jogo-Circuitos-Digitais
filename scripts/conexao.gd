@@ -38,9 +38,10 @@ func _process(_delta: float) -> void:
 	verificar_mouse()
 
 func atualizar() -> void:
-	sinal = porta_saida.sinal
-	porta_entrada.sinal = sinal
-	porta_logica_entrada.verificar_logica()
+	if porta_entrada!=null and porta_saida != null:
+		sinal = porta_saida.sinal
+		porta_entrada.sinal = sinal
+		porta_logica_entrada.verificar_logica()
 
 	
 

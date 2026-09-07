@@ -1,3 +1,4 @@
+class_name NOT
 extends PortaLogica
 
 func _ready() -> void:

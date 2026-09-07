@@ -1,3 +1,4 @@
+class_name NOR
 extends PortaLogica
 
 func _ready() -> void:

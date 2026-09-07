@@ -4,7 +4,7 @@ extends PortaLogica
 @onready var sprite_ligado = load("res://addons/portas_logicas/fonte_sinal1.png")
 @onready var sprite_desligado = load("res://addons/portas_logicas/fonte_sinal2.png")
 @onready var variavel:Label = %Variavel
-@onready var saida: Saida = $Saida
+@onready var saida: Saida = %Saida
 
 func mudar_saida() -> void:
 	definir_sinal(not sinal)
@@ -21,7 +21,7 @@ func definir_sinal(novo_sinal: bool) -> void:
 	else:
 		set("texture", sprite_ligado)
 
-	$Saida.sinal = sinal
+	saida.sinal = sinal
 
 	for child in %SaidaLigacao.get_children():
 		child.atualizar()

@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://n3qcxknitmtn"]
+
+[ext_resource type="Texture2D" uid="uid://d0nofaoditjxl" path="res://addons/portas_logicas/registrador_sipo.png" id="1_q47ln"]
+[ext_resource type="Script" uid="uid://bguopkv3gyebg" path="res://scripts/registrador_sipo.gd" id="2_yfwsd"]
+[ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_dlrxt"]
+[ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="4_0yosq"]
+[ext_resource type="Script" uid="uid://o4wedqo7378d" path="res://scripts/adaptar_label.gd" id="5_5q0lr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1574"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie5d1"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_texfu"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ub53g"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aowou"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pf7je"]
+radius = 4.1231055
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(34, 38)
+
+[node name="RegistradorSIPO" type="Sprite2D" unique_id=2003776282 node_paths=PackedStringArray("ligar")]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_q47ln")
+script = ExtResource("2_yfwsd")
+ligar = [NodePath("Saida1"), NodePath("Saida2"), NodePath("Saida3"), NodePath("Saida4"), NodePath("Entrada1"), NodePath("Entrada2")]
+tipo = 21
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=657532779]
+unique_name_in_owner = true
+
+[node name="Saida1" type="Area2D" parent="." unique_id=1896286589 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, -27)
+script = ExtResource("3_dlrxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida1" unique_id=61803604]
+shape = SubResource("CircleShape2D_f1574")
+
+[node name="Saida2" type="Area2D" parent="." unique_id=1402626134 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, -17)
+script = ExtResource("3_dlrxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida2" unique_id=1300285121]
+shape = SubResource("CircleShape2D_ie5d1")
+
+[node name="Saida3" type="Area2D" parent="." unique_id=1880541821 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, -7)
+script = ExtResource("3_dlrxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida3" unique_id=1694958944]
+shape = SubResource("CircleShape2D_texfu")
+
+[node name="Saida4" type="Area2D" parent="." unique_id=625074536 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, 3)
+script = ExtResource("3_dlrxt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida4" unique_id=1551532143]
+shape = SubResource("CircleShape2D_ub53g")
+
+[node name="Entrada1" type="Area2D" parent="." unique_id=521480831 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-38, -17)
+script = ExtResource("4_0yosq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada1" unique_id=899657583]
+shape = SubResource("CircleShape2D_aowou")
+
+[node name="Entrada2" type="Area2D" parent="." unique_id=679434295 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(0, 28)
+script = ExtResource("4_0yosq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada2" unique_id=1275422611]
+shape = SubResource("CircleShape2D_pf7je")
+
+[node name="ArrastarArea" type="Area2D" parent="." unique_id=415143323]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=710380619]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_f1574")
+
+[node name="Nome" type="Label" parent="." unique_id=1453776055]
+unique_name_in_owner = true
+offset_left = -37.0
+offset_top = -45.0
+offset_right = 94.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Registrador SIPO"
+script = ExtResource("5_5q0lr")
+
+[connection signal="input_event" from="Saida1" to="Saida1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida1" to="Saida1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida1" to="Saida1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida2" to="Saida2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida2" to="Saida2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida2" to="Saida2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida3" to="Saida3" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida3" to="Saida3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida3" to="Saida3" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida4" to="Saida4" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida4" to="Saida4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida4" to="Saida4" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada1" to="Entrada1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada1" to="Entrada1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada1" to="Entrada1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada2" to="Entrada2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada2" to="Entrada2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada2" to="Entrada2" method="_on_mouse_exited"]

@@ -26,6 +26,7 @@ ligar = [NodePath("Saida"), NodePath("ButaoLigarDesligar")]
 unique_name_in_owner = true
 
 [node name="Saida" type="Area2D" parent="." unique_id=909673985 groups=["saida"]]
+unique_name_in_owner = true
 process_mode = 4
 position = Vector2(49, 13.5)
 script = ExtResource("3_4o7b4")

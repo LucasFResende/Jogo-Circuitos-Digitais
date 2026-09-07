@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://ch4f8n4wv1si2"]
+
+[ext_resource type="Texture2D" uid="uid://2o7ueehj83eq" path="res://addons/portas_logicas/contador_sincrono_decrescente.png" id="1_ciq45"]
+[ext_resource type="Script" uid="uid://c7byh3158v6m6" path="res://scripts/contador_decr.gd" id="2_e5tmx"]
+[ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_bhxws"]
+[ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="4_uxibh"]
+[ext_resource type="Script" uid="uid://o4wedqo7378d" path="res://scripts/adaptar_label.gd" id="5_6k5ma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1574"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie5d1"]
+radius = 4.1231055
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_texfu"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ub53g"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aowou"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(34, 38)
+
+[node name="ContadorDecr" type="Sprite2D" unique_id=819038623 node_paths=PackedStringArray("ligar")]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ciq45")
+script = ExtResource("2_e5tmx")
+ligar = [NodePath("Saida1"), NodePath("Saida2"), NodePath("Saida3"), NodePath("Saida4"), NodePath("Entrada1")]
+tipo = 17
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=805513074]
+unique_name_in_owner = true
+
+[node name="Saida1" type="Area2D" parent="." unique_id=1549650361 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, -15)
+script = ExtResource("3_bhxws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida1" unique_id=716644599]
+shape = SubResource("CircleShape2D_f1574")
+
+[node name="Saida2" type="Area2D" parent="." unique_id=2145268620 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, -5)
+script = ExtResource("3_bhxws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida2" unique_id=1038952081]
+shape = SubResource("CircleShape2D_ie5d1")
+
+[node name="Saida3" type="Area2D" parent="." unique_id=1546289005 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, 5)
+script = ExtResource("3_bhxws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida3" unique_id=2037533068]
+shape = SubResource("CircleShape2D_texfu")
+
+[node name="Saida4" type="Area2D" parent="." unique_id=322137890 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, 15)
+script = ExtResource("3_bhxws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida4" unique_id=2038204135]
+shape = SubResource("CircleShape2D_ub53g")
+
+[node name="Entrada1" type="Area2D" parent="." unique_id=1709388835 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-38, -5)
+script = ExtResource("4_uxibh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada1" unique_id=73049807]
+shape = SubResource("CircleShape2D_aowou")
+
+[node name="ArrastarArea" type="Area2D" parent="." unique_id=1362086942]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=1409583284]
+shape = SubResource("RectangleShape2D_f1574")
+
+[node name="Nome" type="Label" parent="." unique_id=684440888]
+unique_name_in_owner = true
+offset_left = -22.0
+offset_top = -34.0
+offset_right = 51.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Contador"
+script = ExtResource("5_6k5ma")
+
+[connection signal="input_event" from="Saida1" to="Saida1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida1" to="Saida1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida1" to="Saida1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida2" to="Saida2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida2" to="Saida2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida2" to="Saida2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida3" to="Saida3" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida3" to="Saida3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida3" to="Saida3" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida4" to="Saida4" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida4" to="Saida4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida4" to="Saida4" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada1" to="Entrada1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada1" to="Entrada1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada1" to="Entrada1" method="_on_mouse_exited"]

@@ -1,3 +1,4 @@
+class_name XNOR
 extends PortaLogica
 
 func _ready() -> void:

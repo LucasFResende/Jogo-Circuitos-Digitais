@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cpim01oa6lywj"]
+
+[ext_resource type="Texture2D" uid="uid://ccwte787diwxs" path="res://addons/portas_logicas/clock.png" id="1_nmom1"]
+[ext_resource type="Script" uid="uid://bb6swjn0gh273" path="res://scripts/clock.gd" id="2_vpkxh"]
+[ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_0wyj7"]
+[ext_resource type="Script" uid="uid://o4wedqo7378d" path="res://scripts/adaptar_label.gd" id="4_jmp7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1574"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(42, 34)
+
+[node name="Clock" type="Sprite2D" unique_id=1917848927 node_paths=PackedStringArray("ligar")]
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("1_nmom1")
+script = ExtResource("2_vpkxh")
+ligar = [NodePath("Saida")]
+tipo = 14
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=2028000258]
+unique_name_in_owner = true
+
+[node name="Saida" type="Area2D" parent="." unique_id=1361317935 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(26, 0)
+script = ExtResource("3_0wyj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" unique_id=968327691]
+shape = SubResource("CircleShape2D_f1574")
+
+[node name="ArrastarArea" type="Area2D" parent="." unique_id=1007894947]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=815150329]
+position = Vector2(-8, 0)
+shape = SubResource("RectangleShape2D_f1574")
+
+[node name="Nome" type="Label" parent="." unique_id=572317878]
+unique_name_in_owner = true
+offset_left = -11.0
+offset_top = -30.0
+offset_right = 31.0
+offset_bottom = -7.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Clock"
+script = ExtResource("4_jmp7c")
+
+[node name="Dialogo" type="AcceptDialog" parent="." unique_id=1735806673]
+unique_name_in_owner = true
+oversampling_override = 1.0
+initial_position = 4
+size = Vector2i(316, 202)
+dialog_text = "A cada quantos segundos um sinal será emitido? (Ex.: 1s, 0.5s)"
+dialog_autowrap = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogo" unique_id=634181765]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 308.0
+offset_bottom = 153.0
+theme_override_constants/margin_top = 65
+
+[node name="TempoClockInput" type="LineEdit" parent="Dialogo/MarginContainer" unique_id=1783235148]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 80)
+custom_maximum_size = Vector2(300, 80)
+clip_contents = true
+layout_mode = 2
+placeholder_text = "Digite somente números e ponto"
+virtual_keyboard_enabled = false
+
+[connection signal="input_event" from="Saida" to="Saida" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida" to="Saida" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida" to="Saida" method="_on_mouse_exited"]
+[connection signal="confirmed" from="Dialogo" to="." method="_on_dialogo_confirmed"]

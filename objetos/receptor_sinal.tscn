@@ -18,7 +18,7 @@ script = ExtResource("2_bd05w")
 ligar = [NodePath("Entrada")]
 tipo = 1
 
-[node name="Entrada" type="Area2D" parent="." unique_id=929402223]
+[node name="Entrada" type="Area2D" parent="." unique_id=929402223 groups=["entrada"]]
 process_mode = 4
 position = Vector2(-25, 15)
 script = ExtResource("2_t3odr")

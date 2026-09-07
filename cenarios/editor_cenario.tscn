@@ -15,10 +15,22 @@
 [ext_resource type="PackedScene" uid="uid://bmasn50rrds44" path="res://objetos/porta_xor.tscn" id="11_648rf"]
 [ext_resource type="Texture2D" uid="uid://cs6ku6til6r8w" path="res://addons/cenario/lixeira1.png" id="15_l38a8"]
 [ext_resource type="Script" uid="uid://cvefu0g5ojl0t" path="res://scripts/lixeira.gd" id="16_613l6"]
+[ext_resource type="PackedScene" uid="uid://b5wmlxl4taxua" path="res://objetos/flip_flop_s_r_clock.tscn" id="17_v2mkt"]
 [ext_resource type="Texture2D" uid="uid://b2olvjji2h5hw" path="res://addons/cenario/confirmar_hover.png" id="18_kkdjs"]
 [ext_resource type="Script" uid="uid://b1xrsply84sjw" path="res://scripts/circuito.gd" id="18_rmqxn"]
+[ext_resource type="PackedScene" uid="uid://c78e3e2go03q4" path="res://objetos/flip_flop_j_k_clock.tscn" id="19_68kot"]
 [ext_resource type="Texture2D" uid="uid://diarwgtcvba6k" path="res://addons/cenario/confirmar.png" id="19_mcjft"]
+[ext_resource type="PackedScene" uid="uid://20hf1c7sq58r" path="res://objetos/flip_flop_s_r.tscn" id="20_kkdjs"]
+[ext_resource type="PackedScene" uid="uid://cu6e4bjqu2tu7" path="res://objetos/flip_flop_d.tscn" id="20_ydorw"]
+[ext_resource type="PackedScene" uid="uid://cpim01oa6lywj" path="res://objetos/clock.tscn" id="21_ihvhe"]
 [ext_resource type="Script" uid="uid://bdr0qiakmd6ef" path="res://scripts/saidas.gd" id="21_mcjft"]
+[ext_resource type="PackedScene" uid="uid://bykk3njt83lpk" path="res://objetos/registrador_pipo.tscn" id="22_ojqcs"]
+[ext_resource type="PackedScene" uid="uid://bm1322voqg46w" path="res://objetos/registrador_piso.tscn" id="23_3ff41"]
+[ext_resource type="PackedScene" uid="uid://n3qcxknitmtn" path="res://objetos/registrador_sipo.tscn" id="24_8vbqg"]
+[ext_resource type="PackedScene" uid="uid://d0kgp6usa4r7q" path="res://objetos/registrador_siso.tscn" id="25_0iaeh"]
+[ext_resource type="PackedScene" uid="uid://b2kpsinqmlqkp" path="res://objetos/contador_assinc.tscn" id="26_wpb5d"]
+[ext_resource type="PackedScene" uid="uid://ch4f8n4wv1si2" path="res://objetos/contador_decr.tscn" id="27_hj7ip"]
+[ext_resource type="PackedScene" uid="uid://bh8yic8h7w8" path="res://objetos/contador_sinc.tscn" id="28_vs5xv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1574"]
 texture = ExtResource("1_c087g")
@@ -170,7 +182,7 @@ mouse_filter = 2
 theme_override_constants/separation = 140
 alignment = 1
 script = ExtResource("5_miamp")
-lista = Array[PackedScene]([ExtResource("5_rc6gm"), ExtResource("6_miamp"), ExtResource("7_pfohb"), ExtResource("8_v0pkc"), ExtResource("9_l38a8"), ExtResource("10_613l6"), ExtResource("11_648rf")])
+lista = Array[PackedScene]([ExtResource("5_rc6gm"), ExtResource("6_miamp"), ExtResource("7_pfohb"), ExtResource("8_v0pkc"), ExtResource("9_l38a8"), ExtResource("10_613l6"), ExtResource("11_648rf"), ExtResource("20_kkdjs"), ExtResource("17_v2mkt"), ExtResource("19_68kot"), ExtResource("20_ydorw"), ExtResource("21_ihvhe"), ExtResource("22_ojqcs"), ExtResource("23_3ff41"), ExtResource("24_8vbqg"), ExtResource("25_0iaeh"), ExtResource("26_wpb5d"), ExtResource("27_hj7ip"), ExtResource("28_vs5xv")])
 lista_nos = [NodePath("Control"), NodePath("Control2"), NodePath("Control3"), NodePath("Control4"), NodePath("Control5"), NodePath("Control6"), NodePath("Control7")]
 
 [node name="Control" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=476676322]

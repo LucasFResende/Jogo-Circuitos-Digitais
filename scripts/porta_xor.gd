@@ -1,3 +1,4 @@
+class_name XOR
 extends PortaLogica
 
 func verificar_logica() -> void:

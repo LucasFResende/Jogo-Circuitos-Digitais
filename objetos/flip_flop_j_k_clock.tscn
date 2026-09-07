@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://c78e3e2go03q4"]
+
+[ext_resource type="Texture2D" uid="uid://di2g8vybeykuo" path="res://addons/portas_logicas/flip-flop_J-K_clock.png" id="1_hoihf"]
+[ext_resource type="Script" uid="uid://fd65w808jh04" path="res://scripts/flip_flop_j_k_clock.gd" id="2_83giu"]
+[ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="3_bsgv7"]
+[ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="4_tj2td"]
+[ext_resource type="Script" uid="uid://o4wedqo7378d" path="res://scripts/adaptar_label.gd" id="5_krwgj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1574"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie5d1"]
+radius = 4.1231055
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_texfu"]
+radius = 4.1231055
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ub53g"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aowou"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82ebn"]
+size = Vector2(34, 38)
+
+[node name="Flip-Flop_J-K_Clock" type="Sprite2D" unique_id=1377037595 node_paths=PackedStringArray("ligar")]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_hoihf")
+script = ExtResource("2_83giu")
+ligar = [NodePath("Saida1"), NodePath("Saida2"), NodePath("Entrada1"), NodePath("Entrada2"), NodePath("Entrada3")]
+tipo = 12
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=2111420945]
+unique_name_in_owner = true
+
+[node name="Saida1" type="Area2D" parent="." unique_id=376618701 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, -13)
+script = ExtResource("3_bsgv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida1" unique_id=125554947]
+shape = SubResource("CircleShape2D_f1574")
+
+[node name="Saida2" type="Area2D" parent="." unique_id=1591170204 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, 13)
+script = ExtResource("3_bsgv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida2" unique_id=1866694270]
+shape = SubResource("CircleShape2D_ie5d1")
+
+[node name="Entrada1" type="Area2D" parent="." unique_id=177837896 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-38, -13)
+script = ExtResource("4_tj2td")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada1" unique_id=495420150]
+shape = SubResource("CircleShape2D_texfu")
+
+[node name="Entrada2" type="Area2D" parent="." unique_id=88670494 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-38, 13)
+script = ExtResource("4_tj2td")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada2" unique_id=1957527619]
+shape = SubResource("CircleShape2D_ub53g")
+
+[node name="Entrada3" type="Area2D" parent="." unique_id=1543128005 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-38, 0)
+script = ExtResource("4_tj2td")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada3" unique_id=1847752968]
+shape = SubResource("CircleShape2D_aowou")
+
+[node name="ArrastarArea" type="Area2D" parent="." unique_id=2094398243]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=1179960834]
+shape = SubResource("RectangleShape2D_82ebn")
+
+[node name="Nome" type="Label" parent="." unique_id=2061472329]
+unique_name_in_owner = true
+offset_left = -49.0
+offset_top = -40.0
+offset_right = 87.0
+offset_bottom = -17.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Flip-Flop J-K Clock"
+script = ExtResource("5_krwgj")
+
+[connection signal="input_event" from="Saida1" to="Saida1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida1" to="Saida1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida1" to="Saida1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida2" to="Saida2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida2" to="Saida2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida2" to="Saida2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada1" to="Entrada1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada1" to="Entrada1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada1" to="Entrada1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada2" to="Entrada2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada2" to="Entrada2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada2" to="Entrada2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada3" to="Entrada3" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada3" to="Entrada3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada3" to="Entrada3" method="_on_mouse_exited"]

@@ -23,6 +23,7 @@ tipo = 6
 unique_name_in_owner = true
 
 [node name="Saida" type="Area2D" parent="." unique_id=1958918021 groups=["saida"]]
+unique_name_in_owner = true
 process_mode = 4
 position = Vector2(41, 0)
 script = ExtResource("3_ykh8f")
@@ -31,6 +32,7 @@ script = ExtResource("3_ykh8f")
 shape = SubResource("CircleShape2D_kri5b")
 
 [node name="Entrada1" type="Area2D" parent="." unique_id=1160757067 groups=["entrada"]]
+unique_name_in_owner = true
 process_mode = 4
 position = Vector2(-41, -10)
 script = ExtResource("3_3fld5")
@@ -39,6 +41,7 @@ script = ExtResource("3_3fld5")
 shape = SubResource("CircleShape2D_kri5b")
 
 [node name="Entrada2" type="Area2D" parent="." unique_id=902895615 groups=["entrada"]]
+unique_name_in_owner = true
 process_mode = 4
 position = Vector2(-41, 10)
 script = ExtResource("3_3fld5")

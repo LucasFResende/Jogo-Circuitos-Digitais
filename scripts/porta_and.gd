@@ -1,3 +1,4 @@
+class_name AND
 extends PortaLogica
 
 func verificar_logica() -> void:
