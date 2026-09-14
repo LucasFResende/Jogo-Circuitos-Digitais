@@ -55,6 +55,8 @@ layout_mode = 2
 alignment = 1
 
 [node name="AceitarButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=691647597]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -64,6 +66,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_kedoi")
 text = "ACEITAR"
 
 [node name="RepetirButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=2080586918]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4

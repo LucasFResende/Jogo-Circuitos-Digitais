@@ -31,4 +31,3 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("scroll_baixo") and zoom-zoom_diferenca>Vector2.ZERO:
 		zoom-=zoom_diferenca
 		ui.scale = Vector2.ONE / zoom
-		

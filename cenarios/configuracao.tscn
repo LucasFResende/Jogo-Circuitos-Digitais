@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cvdgk6gbmygba"]
+
+[ext_resource type="Script" uid="uid://p4u6qhmtyxk1" path="res://scripts/configuracao.gd" id="1_jhu81"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie5d1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1574"]
+font_size = 60
+
+[node name="Configuracao" type="Control" unique_id=830573024]
+process_mode = 3
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jhu81")
+
+[node name="Panel" type="Panel" parent="." unique_id=1597807949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ie5d1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1991837845]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ModoContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=377829331]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ModoContainer" unique_id=1442636966]
+layout_mode = 2
+text = "Modo da Tela: "
+label_settings = SubResource("LabelSettings_f1574")
+
+[node name="ModoButton" type="OptionButton" parent="VBoxContainer/ModoContainer" unique_id=455558502]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_font_sizes/font_size = 50
+alignment = 1
+item_count = 2
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Janela"
+popup/item_1/id = 1
+
+[node name="ResolucaoContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1529681308]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ResolucaoContainer" unique_id=992569499]
+layout_mode = 2
+text = "RESOLUÇÃO: "
+label_settings = SubResource("LabelSettings_f1574")
+
+[node name="ResolucaoButton" type="OptionButton" parent="VBoxContainer/ResolucaoContainer" unique_id=728918237]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_font_sizes/font_size = 50
+alignment = 1
+selected = 0
+item_count = 7
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1366x768"
+popup/item_2/id = 2
+popup/item_3/text = "1280x720"
+popup/item_3/id = 3
+popup/item_4/text = "960x540"
+popup/item_4/id = 4
+popup/item_5/text = "854x480"
+popup/item_5/id = 5
+popup/item_6/text = "640x360"
+popup/item_6/id = 6
+
+[node name="Button" type="Button" parent="." unique_id=255469515]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -31.0
+offset_right = 73.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "SALVAR E VOLTAR"
+
+[connection signal="item_selected" from="VBoxContainer/ModoContainer/ModoButton" to="." method="_on_modo_button_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/ResolucaoContainer/ResolucaoButton" to="." method="_on_resolucao_button_item_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

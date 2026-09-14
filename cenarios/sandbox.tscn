@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://c7xlq5ieixx2y"]
+
+[ext_resource type="Script" uid="uid://c10at5434yqlo" path="res://scripts/camera_2d.gd" id="1_ca8mp"]
+[ext_resource type="Texture2D" uid="uid://c6d7qjnecuvpy" path="res://addons/cenario/barra.png" id="3_k8rsg"]
+[ext_resource type="Texture2D" uid="uid://cibnqtuc4dgq8" path="res://addons/cenario/seta.png" id="4_pxvek"]
+[ext_resource type="Script" uid="uid://cfscb2ao1diy5" path="res://scripts/lista_portas.gd" id="5_cv44h"]
+[ext_resource type="PackedScene" uid="uid://drwujyv6abhfd" path="res://objetos/porta_and.tscn" id="6_8b2tn"]
+[ext_resource type="PackedScene" uid="uid://cgdlbfcdpeni2" path="res://objetos/porta_nand.tscn" id="7_urn85"]
+[ext_resource type="PackedScene" uid="uid://dqqn0f37jrurl" path="res://objetos/porta_nor.tscn" id="8_mqp48"]
+[ext_resource type="PackedScene" uid="uid://chbvjwgwihu33" path="res://objetos/porta_not.tscn" id="9_8f3y2"]
+[ext_resource type="PackedScene" uid="uid://dojaf0u8vki8r" path="res://objetos/porta_or.tscn" id="10_485g0"]
+[ext_resource type="PackedScene" uid="uid://balvo76xl87jm" path="res://objetos/porta_xnor.tscn" id="11_lxbor"]
+[ext_resource type="PackedScene" uid="uid://bmasn50rrds44" path="res://objetos/porta_xor.tscn" id="12_kl4xr"]
+[ext_resource type="PackedScene" uid="uid://20hf1c7sq58r" path="res://objetos/flip_flop_s_r.tscn" id="13_7252d"]
+[ext_resource type="PackedScene" uid="uid://b5wmlxl4taxua" path="res://objetos/flip_flop_s_r_clock.tscn" id="14_fi7up"]
+[ext_resource type="PackedScene" uid="uid://c78e3e2go03q4" path="res://objetos/flip_flop_j_k_clock.tscn" id="15_5kb76"]
+[ext_resource type="PackedScene" uid="uid://cu6e4bjqu2tu7" path="res://objetos/flip_flop_d.tscn" id="16_4bbob"]
+[ext_resource type="PackedScene" uid="uid://cpim01oa6lywj" path="res://objetos/clock.tscn" id="17_8j8yh"]
+[ext_resource type="PackedScene" uid="uid://bykk3njt83lpk" path="res://objetos/registrador_pipo.tscn" id="18_nnk17"]
+[ext_resource type="PackedScene" uid="uid://bm1322voqg46w" path="res://objetos/registrador_piso.tscn" id="19_wrde1"]
+[ext_resource type="PackedScene" uid="uid://n3qcxknitmtn" path="res://objetos/registrador_sipo.tscn" id="20_peksk"]
+[ext_resource type="PackedScene" uid="uid://d0kgp6usa4r7q" path="res://objetos/registrador_siso.tscn" id="21_01oxd"]
+[ext_resource type="PackedScene" uid="uid://b2kpsinqmlqkp" path="res://objetos/contador_assinc.tscn" id="22_xpjmk"]
+[ext_resource type="PackedScene" uid="uid://ch4f8n4wv1si2" path="res://objetos/contador_decr.tscn" id="23_v7yf6"]
+[ext_resource type="PackedScene" uid="uid://bh8yic8h7w8" path="res://objetos/contador_sinc.tscn" id="24_8fjhy"]
+[ext_resource type="Texture2D" uid="uid://cs6ku6til6r8w" path="res://addons/cenario/lixeira1.png" id="25_mqp48"]
+[ext_resource type="Script" uid="uid://cvefu0g5ojl0t" path="res://scripts/lixeira.gd" id="26_8f3y2"]
+[ext_resource type="Script" uid="uid://bdr0qiakmd6ef" path="res://scripts/saidas.gd" id="28_lxbor"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8f3y2"]
+bg_color = Color(0.45882353, 0.45882353, 0.45882353, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie5d1"]
+texture = ExtResource("3_k8rsg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5183e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_648rf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mggl4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1574"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_613l6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tv0sf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(41.200012, 37.999985)
+
+[node name="Sandbox" type="Control" unique_id=2052403494]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1842818316]
+script = ExtResource("1_ca8mp")
+
+[node name="UI" type="Control" parent="Camera2D" unique_id=20644770]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="Panel" parent="Camera2D/UI" unique_id=1992823817]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -980.0
+offset_top = -560.0
+offset_right = 940.0
+offset_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8f3y2")
+
+[node name="Panel" type="Panel" parent="Camera2D/UI" unique_id=1082163811]
+z_index = 1
+layout_mode = 0
+offset_left = -529.0
+offset_top = 399.0
+offset_right = 592.0
+offset_bottom = 540.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ie5d1")
+
+[node name="EsquerdaButton" type="Button" parent="Camera2D/UI" unique_id=326549477]
+z_index = 1
+layout_mode = 0
+offset_left = -522.0
+offset_top = 449.0
+offset_right = -475.0
+offset_bottom = 512.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5183e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_648rf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mggl4")
+icon = ExtResource("4_pxvek")
+icon_alignment = 1
+
+[node name="DireiraButton" type="Button" parent="Camera2D/UI" unique_id=536644433]
+z_index = 1
+layout_mode = 0
+offset_left = 584.0
+offset_top = 449.0
+offset_right = 631.0
+offset_bottom = 512.0
+scale = Vector2(-1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_f1574")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_613l6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tv0sf")
+icon = ExtResource("4_pxvek")
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/UI" unique_id=1670009601 node_paths=PackedStringArray("lista_nos")]
+z_index = 1
+layout_mode = 0
+offset_left = -459.0
+offset_top = 405.59998
+offset_right = 521.0
+offset_bottom = 538.6
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 65.5)
+mouse_filter = 2
+theme_override_constants/separation = 140
+alignment = 1
+script = ExtResource("5_cv44h")
+lista = Array[PackedScene]([ExtResource("6_8b2tn"), ExtResource("7_urn85"), ExtResource("8_mqp48"), ExtResource("9_8f3y2"), ExtResource("10_485g0"), ExtResource("11_lxbor"), ExtResource("12_kl4xr"), ExtResource("13_7252d"), ExtResource("14_fi7up"), ExtResource("15_5kb76"), ExtResource("16_4bbob"), ExtResource("17_8j8yh"), ExtResource("18_nnk17"), ExtResource("19_wrde1"), ExtResource("20_peksk"), ExtResource("21_01oxd"), ExtResource("22_xpjmk"), ExtResource("23_v7yf6"), ExtResource("24_8fjhy")])
+lista_nos = [NodePath("Control"), NodePath("Control2"), NodePath("Control3"), NodePath("Control4"), NodePath("Control5"), NodePath("Control6"), NodePath("Control7")]
+
+[node name="Control" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=288261551]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=140838543]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=1932372990]
+layout_mode = 2
+
+[node name="Control4" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=633930578]
+layout_mode = 2
+
+[node name="Control5" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=262032713]
+layout_mode = 2
+
+[node name="Control6" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=989852785]
+layout_mode = 2
+
+[node name="Control7" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=1632077094]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Camera2D/UI" unique_id=150505380]
+anchors_preset = 0
+offset_left = 827.0
+offset_top = 449.0
+offset_right = 867.0
+offset_bottom = 489.0
+
+[node name="Lixeira" type="Sprite2D" parent="Camera2D/UI/Control" unique_id=1043926714]
+position = Vector2(52.999996, 10.999999)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("25_mqp48")
+script = ExtResource("26_8f3y2")
+
+[node name="Area2D" type="Area2D" parent="Camera2D/UI/Control/Lixeira" unique_id=762449533]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/UI/Control/Lixeira/Area2D" unique_id=2054320693]
+position = Vector2(0.6000366, 4.600067)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_f1574")
+
+[node name="Circuito" type="Control" parent="." unique_id=534740252 groups=["circuito"]]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Entradas" type="Control" parent="Circuito" unique_id=565814459]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Saidas" type="Control" parent="Circuito" unique_id=1710866953]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("28_lxbor")
+
+[node name="Portas" type="Control" parent="Circuito" unique_id=2051606212]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="mouse_entered" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_exited"]
+[connection signal="pressed" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_esquerda_button_pressed"]
+[connection signal="mouse_entered" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_exited"]
+[connection signal="pressed" from="Camera2D/UI/DireiraButton" to="Camera2D/UI/HBoxContainer" method="_on_direira_button_pressed"]
+[connection signal="area_entered" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Camera2D/UI/Control/Lixeira/Area2D" to="Camera2D/UI/Control/Lixeira" method="_on_area_2d_area_exited"]

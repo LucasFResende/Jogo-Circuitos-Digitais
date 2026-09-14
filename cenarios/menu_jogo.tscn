@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://b5tpheplwyhc"]
+
+[ext_resource type="Script" uid="uid://c4a04vkwtlc8h" path="res://scripts/menu_jogo.gd" id="1_pjfuy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1574"]
+bg_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1574"]
+font_size = 100
+
+[node name="MenuJogo" type="Control" unique_id=118638716]
+process_mode = 2
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pjfuy")
+
+[node name="Panel" type="Panel" parent="." unique_id=1558059406]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f1574")
+
+[node name="Label" type="Label" parent="." unique_id=1239998833]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.5
+offset_top = 100.0
+offset_right = 156.5
+offset_bottom = 237.0
+grow_horizontal = 2
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_f1574")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1879126681]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="RetomarButton" type="Button" parent="VBoxContainer" unique_id=2076591000]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "RETOMAR"
+
+[node name="ConfgButton" type="Button" parent="VBoxContainer" unique_id=2066426528]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "CONFIGURAÇÕES"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=2037438365]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "MENU INICIAL"
+
+[node name="SairButton" type="Button" parent="VBoxContainer" unique_id=2084494545]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "SAIR DO JOGO"
+
+[connection signal="pressed" from="VBoxContainer/RetomarButton" to="." method="_on_retomar_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ConfgButton" to="." method="_on_confg_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SairButton" to="." method="_on_sair_button_pressed"]

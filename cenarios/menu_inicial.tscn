@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://c4ayhkwtfext5"]
+
+[ext_resource type="Texture2D" uid="uid://exggow4mlkr6" path="res://addons/DCL_icon.png" id="1_47di3"]
+[ext_resource type="Texture2D" uid="uid://2ddp0hyno3qs" path="res://addons/plano_de_fundo.png" id="1_dp3b6"]
+[ext_resource type="Script" uid="uid://7a67ih74ihbx" path="res://scripts/menu_inicial.gd" id="1_wrd4v"]
+[ext_resource type="Texture2D" uid="uid://6m2l8qk77mdr" path="res://addons/menu_inicial/iniciar_button.png" id="3_4uj84"]
+[ext_resource type="Texture2D" uid="uid://0fotqiyf5621" path="res://addons/menu_inicial/sandbox_button.png" id="4_4uj84"]
+[ext_resource type="Texture2D" uid="uid://b41tg3e48kq0o" path="res://addons/menu_inicial/iniciar_button_1.png" id="4_eg6ly"]
+[ext_resource type="Texture2D" uid="uid://bpfoq1jb5qve8" path="res://addons/menu_inicial/conf_button.png" id="5_eg6ly"]
+[ext_resource type="Texture2D" uid="uid://bodclrjprd8pl" path="res://addons/menu_inicial/sair_button.png" id="6_gpbmr"]
+[ext_resource type="Texture2D" uid="uid://by0lspdxtagqb" path="res://addons/menu_inicial/sandbox_button_1.png" id="6_ljpw2"]
+[ext_resource type="Texture2D" uid="uid://d3pttn82na3b4" path="res://addons/menu_inicial/conf_button_1.png" id="8_57xmv"]
+[ext_resource type="Texture2D" uid="uid://diujnj0vbtopp" path="res://addons/menu_inicial/sair_button_1.png" id="10_cfeyk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1574"]
+texture = ExtResource("1_dp3b6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie5d1"]
+texture = ExtResource("3_4uj84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57xmv"]
+texture = ExtResource("4_eg6ly")
+modulate_color = Color(1, 1, 1, 0.70000005)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eg6ly"]
+texture = ExtResource("4_eg6ly")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_texfu"]
+texture = ExtResource("4_4uj84")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfeyk"]
+texture = ExtResource("6_ljpw2")
+modulate_color = Color(1, 1, 1, 0.70000005)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gpbmr"]
+texture = ExtResource("6_ljpw2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrd4v"]
+texture = ExtResource("5_eg6ly")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xw7p2"]
+texture = ExtResource("8_57xmv")
+modulate_color = Color(1, 1, 1, 0.70000005)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ap5yf"]
+texture = ExtResource("8_57xmv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4uj84"]
+texture = ExtResource("6_gpbmr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_puewl"]
+texture = ExtResource("10_cfeyk")
+modulate_color = Color(1, 1, 1, 0.70000005)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ljpw2"]
+texture = ExtResource("10_cfeyk")
+
+[node name="MenuInicial" type="Control" unique_id=608650820]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wrd4v")
+
+[node name="Panel" type="Panel" parent="." unique_id=918607299]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_f1574")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=382839581]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -98.0
+offset_right = 164.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="IniciarButton" type="Button" parent="VBoxContainer" unique_id=1532724413]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_ie5d1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_57xmv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eg6ly")
+
+[node name="SandBoxButton" type="Button" parent="VBoxContainer" unique_id=2091770986]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_texfu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cfeyk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gpbmr")
+
+[node name="ConfiguracaoButton" type="Button" parent="VBoxContainer" unique_id=166230034]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_wrd4v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xw7p2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ap5yf")
+
+[node name="SairButton" type="Button" parent="VBoxContainer" unique_id=1133530048]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_4uj84")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_puewl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ljpw2")
+
+[node name="DclIcon" type="Sprite2D" parent="." unique_id=72015822]
+position = Vector2(960.975, 179.22498)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("1_47di3")
+
+[connection signal="pressed" from="VBoxContainer/IniciarButton" to="." method="_on_iniciar_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SandBoxButton" to="." method="_on_sand_box_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ConfiguracaoButton" to="." method="_on_configuracao_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SairButton" to="." method="_on_sair_button_pressed"]
