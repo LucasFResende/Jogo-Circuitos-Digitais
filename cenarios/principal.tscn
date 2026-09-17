@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://batc31p0ilsuq" path="res://cenarios/manual.tscn" id="4_a18yh"]
 [ext_resource type="Texture2D" uid="uid://bb6jbytqqv2t1" path="res://addons/cenario/computador.png" id="4_y215v"]
 [ext_resource type="Texture2D" uid="uid://ylc7ffjlmn27" path="res://addons/cenario/editor-circuitos.png" id="5_a18yh"]
+[ext_resource type="PackedScene" uid="uid://dhdadi0gru482" path="res://cenarios/email.tscn" id="6_y215v"]
 [ext_resource type="PackedScene" uid="uid://cqq5l40bh7g40" path="res://cenarios/editor_cenario.tscn" id="7_2rmsn"]
-[ext_resource type="PackedScene" uid="uid://r2e2omu0n8hh" path="res://cenarios/computador.tscn" id="7_a18yh"]
+[ext_resource type="PackedScene" uid="uid://cdrk8qysjqr3p" path="res://tutorial/tutorial.tscn" id="9_a18yh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a554"]
 texture = ExtResource("1_achv1")
@@ -73,7 +74,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xiapp")
 icon = ExtResource("4_y215v")
 icon_alignment = 1
 script = ExtResource("3_sxp2k")
-cenario_destino = ExtResource("7_a18yh")
+cenario_destino = ExtResource("6_y215v")
 
 [node name="EditorCircuitosButton" type="Button" parent="." unique_id=851164548]
 unique_name_in_owner = true
@@ -88,6 +89,9 @@ icon = ExtResource("5_a18yh")
 icon_alignment = 1
 script = ExtResource("3_sxp2k")
 cenario_destino = ExtResource("7_2rmsn")
+
+[node name="Tutorial" parent="." unique_id=258195606 instance=ExtResource("9_a18yh")]
+layout_mode = 1
 
 [connection signal="pressed" from="ManualButton" to="ManualButton" method="_on_pressed"]
 [connection signal="pressed" from="ComputadorButton" to="ComputadorButton" method="_on_pressed"]

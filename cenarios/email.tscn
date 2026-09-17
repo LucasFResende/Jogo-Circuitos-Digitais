@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6n78ek0i603e" path="res://scripts/email.gd" id="1_1ousk"]
 [ext_resource type="Texture2D" uid="uid://opbv2f6hy2q3" path="res://addons/cenario/UI-computador-email.png" id="1_rd1h1"]
-[ext_resource type="Script" uid="uid://cvmbhhkjs52q3" path="res://scripts/fechar_email_button.gd" id="2_rd1h1"]
+[ext_resource type="Script" uid="uid://dobkxofn7k07i" path="res://scripts/fechar_button.gd" id="3_1ousk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1574"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -27,7 +27,8 @@ offset_bottom = 1080.0
 mouse_filter = 2
 texture = ExtResource("1_rd1h1")
 
-[node name="FecharEmailButton" type="Button" parent="." unique_id=311258139]
+[node name="FecharButton" type="Button" parent="." unique_id=311258139 node_paths=PackedStringArray("no_pai")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,7 +43,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_f1574")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rd1h1")
-script = ExtResource("2_rd1h1")
+script = ExtResource("3_1ousk")
+no_pai = NodePath("..")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2091398217 groups=["Emails"]]
 layout_mode = 0
@@ -87,6 +89,6 @@ max_size = Vector2i(300, 150)
 dialog_text = "Para repetir a missão primeiro precisa completar ela."
 dialog_autowrap = true
 
-[connection signal="mouse_entered" from="FecharEmailButton" to="FecharEmailButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="FecharEmailButton" to="FecharEmailButton" method="_on_mouse_exited"]
-[connection signal="pressed" from="FecharEmailButton" to="FecharEmailButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="FecharButton" to="FecharButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="FecharButton" to="FecharButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="FecharButton" to="FecharButton" method="_on_pressed"]
