@@ -63,6 +63,14 @@ texture = ExtResource("18_kkdjs")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
 size = Vector2(41.200012, 37.999985)
 
+[sub_resource type="Animation" id="Animation_tc0n4"]
+resource_name = "adicionar_no"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_do771"]
+_data = {
+&"adicionar_no": SubResource("Animation_tc0n4")
+}
+
 [node name="EditorCenario" type="Control" unique_id=790972427]
 layout_mode = 3
 anchors_preset = 8
@@ -270,6 +278,9 @@ unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=330504899]
+libraries/ = SubResource("AnimationLibrary_do771")
 
 [connection signal="mouse_entered" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Camera2D/UI/EsquerdaButton" to="Camera2D/UI/HBoxContainer" method="_on_mouse_exited"]

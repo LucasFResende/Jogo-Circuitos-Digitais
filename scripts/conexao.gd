@@ -6,8 +6,8 @@ extends Line2D
 var porta_logica_entrada: PortaLogica
 var sinal:int = 0
 
-var p1:Vector2
-var p2:Vector2
+@export var p1:Vector2
+@export var p2:Vector2
 var cor_desligado: Color = Color.DARK_RED
 var cor_ligado: Color = Color.RED
 var pode_deletar:bool = false

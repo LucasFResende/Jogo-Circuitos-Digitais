@@ -13,22 +13,22 @@ var atualizando: bool = false
 
 @onready var area_2d: Area2D = %ArrastarArea
 @onready var id:int = rand_from_seed(self.name.hash())[0]
-@onready var circuito:Control = get_tree().get_first_node_in_group("circuito")
-@onready var entradas:Control = circuito.get_child(0)
-@onready var saidas:Control = circuito.get_child(1)
-@onready var portas:Control = circuito.get_child(2)
+var circuito:Control
+var entradas:Control
+var saidas:Control
+var portas:Control
 @onready var nome:Label = %Nome
 
 
 enum TIPO {ENTRADA, SAIDA, AND, NAND, NOR, NOT, OR, XNOR, XOR, FLIP_FLOP_S_R, FLIP_FLOP_S_R_CLOCK,
 FLIP_FLOP_J_K, FLIP_FLOP_J_K_CLOCL, FLIP_FLOP_D, CLOCK, CONTADOR_ASSINC, CONTADOR_SINC, CONTADOR_DECR,
-REGISTRADOR_PIPO, REGISTRADOR_SISO, REGISTRADOR_PISO, REGISTRADOR_SIPO}
+REGISTRADOR_PIPO, REGISTRADOR_SISO, REGISTRADOR_PISO, REGISTRADOR_SIPO,AND_tutorial}
 
 @export var tipo: TIPO
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	area_2d.input_event.connect(_on_area_2d_input_event)
+	ready_padrao()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -81,3 +81,13 @@ func iniciar_no() -> void:
 func adicionar() -> void:
 	nome.set("theme_override_colors/font_color",Color.WHITE)
 	iniciar_no()
+
+func ready_padrao() -> void:
+	if tipo == TIPO.AND_tutorial:
+		return
+	else:
+		circuito = get_tree().get_first_node_in_group("circuito")
+		entradas = circuito.get_child(0)
+		saidas = circuito.get_child(1)
+		portas = circuito.get_child(2)
+	area_2d.input_event.connect(_on_area_2d_input_event)

@@ -2,7 +2,7 @@ class_name NOT
 extends PortaLogica
 
 func _ready() -> void:
-	area_2d.input_event.connect(_on_area_2d_input_event)
+	ready_padrao()
 	$Entrada1.sinal = 1
 
 func verificar_logica() -> void:

@@ -5,10 +5,13 @@ var tutorial_iniciado:bool = false
 var contador_fala:int = 0
 var principal:Control
 var cena_aberta:Control
+var sobre_pular_tutorial:bool
 
 @onready var tutorial_popup:PopupPanel = %TutorialPopup
 @onready var tutorial_texto:Label = %Label
 @onready var anim:AnimationPlayer = %AnimationPlayer
+@onready var porta_and1:AND = %PortaAnd
+@onready var porta_and2:AND = %PortaAnd2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +26,9 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
+		if sobre_pular_tutorial:
+			Global.mudar_mouse_padrao()
+			call_deferred("queue_free")
 		if anim.is_playing():
 			anim.pause()
 			anim.advance(anim.current_animation_length - anim.current_animation_position)
@@ -54,3 +60,26 @@ func fechar_cena() -> void:
 
 func alterar_script_missao() -> void:
 	Missoes.completo = not Missoes.completo
+
+func ativar_porta(num_porta:int) -> void:
+	if num_porta == 1:
+		porta_and1.process_mode = Node.PROCESS_MODE_INHERIT
+		porta_and1.visible = true
+	elif num_porta == 2:
+		porta_and2.process_mode = Node.PROCESS_MODE_INHERIT
+		porta_and2.visible = true
+
+
+func pular_tutorial() -> void:
+	print("AAAAAAA")
+	queue_free()
+
+
+func _on_pular_tutorial_button_mouse_entered() -> void:
+	sobre_pular_tutorial = true
+	Global.mudar_mouse_selecao()
+
+
+func _on_pular_tutorial_button_mouse_exited() -> void:
+	sobre_pular_tutorial = false
+	Global.mudar_mouse_padrao()

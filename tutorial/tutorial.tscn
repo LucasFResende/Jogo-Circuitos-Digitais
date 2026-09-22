@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bkbjmwcs4s060" path="res://addons/cenario/tutorial_panel.png" id="2_burua"]
 [ext_resource type="Texture2D" uid="uid://d512pywi6ma5" path="res://addons/cenario/celular1.png" id="3_vy6qu"]
 [ext_resource type="Script" uid="uid://ey0jrdidypq3" path="res://tutorial/draw.gd" id="4_qk73h"]
+[ext_resource type="PackedScene" uid="uid://drwujyv6abhfd" path="res://objetos/porta_and.tscn" id="5_ridmi"]
+[ext_resource type="Texture2D" uid="uid://c6d7qjnecuvpy" path="res://addons/cenario/barra.png" id="6_p47bv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcami"]
 texture = ExtResource("2_burua")
@@ -91,7 +93,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": ["", "é aqui que você montará os circuitos para completar as missões"]
+"values": ["", "é aqui que você montará os circuitos para completar as missões."]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -165,6 +167,514 @@ tracks/5/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_lvqxb"]
+resource_name = "11"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Nesse espaço terá todos as portas lógicas e circuitos que você precisa para montar os circuitos e completar as missões."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(429, 937, 1125, 143)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_redraw"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TutorialPopup")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_u4yp8"]
+resource_name = "12"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Para ver as outras portas/circuitos basta clicar nas setas."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(438, 989, 47, 63)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_redraw"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control2:rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(1497, 989, 47, 63)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_redraw"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TutorialPopup")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_enf0y"]
+resource_name = "13"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Para adicionar uma porta, clique e segure o botão esquerdo em cima da porta e arraste para onde deseja adicionar."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control:rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(-10, -10, 0, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_redraw"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control2:rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(-10, -10, 0, 0)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_redraw"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [1],
+"method": &"ativar_porta"
+}, {
+"args": [2],
+"method": &"ativar_porta"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PortaAnd:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(571, 1012), Vector2(571, 500)]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PortaAnd")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"adicionar"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PortaAnd2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.25, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(571, 1012), Vector2(1071, 500)]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PortaAnd2")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"adicionar"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_h8kaa"]
+resource_name = "14"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Para mover a porta de lugar, clique e segure o botão esquerdo em cima da porta e arraste o mouse."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_l38k8"]
+resource_name = "15"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Para ligar um saida em uma entrada, clique na saida que deseja ligar e depois na entrada para conecta-las. Para cancelar a conexão, clique com o botão direito do mouse."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Line2D:points")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedVector2Array(633, 500, 633, 500), PackedVector2Array(633, 500, 1010, 485)]
+}
+
+[sub_resource type="Animation" id="Animation_e4vot"]
+resource_name = "16"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Se quiser aumentar ou diminuir o zoom, rode o scroll do mouse."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_30bqp"]
+resource_name = "17"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Para mover a camera, clique com o botão do meio do mouse e mova o mouse."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8mlcc"]
+resource_name = "18"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Se quiser removar uma ligação, clique com o botão esquerdo do mouse sobre a conexão entre as portas."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_idkkj"]
+resource_name = "19"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Para remover uma porta, arraste ela para cima da lixeira no canto inferior direito."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_p47bv"]
 resource_name = "2"
 length = 2.5000000000000004
@@ -195,6 +705,313 @@ tracks/1/keys = {
 }, {
 "args": [Rect2i(310, 830, 1300, 250)],
 "method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jf5h8"]
+resource_name = "20"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Após montar o circuito para completar a missão, clique no botão de confirmar no canto inferior esquerdo."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 972, 108, 108)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_redraw"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TutorialPopup")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6bq4q"]
+resource_name = "21"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Se a resposta estiver certo aparecerá na tela que está certo depois fechará o editor de circuitos."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_redraw"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TutorialPopup")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AcceptDialog")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector2i(400, 300)],
+"method": &"popup_centered"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AcceptDialog:dialog_text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["ACERTOU!
+Confira o email para ver a(s) nova(s) missão(ões)."]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PortaAnd:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PortaAnd2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Line2D:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dgq6q"]
+resource_name = "22"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "Caso esteja errado aparecerá (mensagem a esquerda) que está errado e você poderá modificar sua resposta."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TutorialPopup")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 0, 1300, 250)],
+"method": &"popup"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AcceptDialog")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [Vector2i(400, 300)],
+"method": &"popup_centered"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AcceptDialog:dialog_text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["RESPOSTA ERRADA
+
+
+
+Esperado: [[0], [0], [0], [1]]
+
+Resultado: [[1], [1], [1], [0]]"]
+}
+
+[sub_resource type="Animation" id="Animation_e8ato"]
+resource_name = "23"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TutorialPopup/HBoxContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["", "E isso encerra nosso tutorial, agora aproveite o jogo!"]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fechar_cena"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TutorialPopup")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [Rect2i(310, 830, 1300, 250)],
+"method": &"popup"
+}, {
+"args": [Rect2i(310, 830, 1300, 250)],
+"method": &"popup"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AcceptDialog")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
 }]
 }
 
@@ -655,9 +1472,106 @@ tracks/1/keys = {
 "update": 0,
 "values": [Rect2(0, 0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control2:rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PortaAnd:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(571, 1012)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PortaAnd2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(571, 1012)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Line2D:points")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array()]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AcceptDialog:dialog_text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PortaAnd:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PortaAnd2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Line2D:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nrgr8"]
 resource_name = "fim_tutorial"
+length = 0.001
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -665,12 +1579,9 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"fechar_cena"
-}, {
 "args": [&"queue_free"],
 "method": &"call_deferred"
 }]
@@ -681,7 +1592,20 @@ _data = {
 &"0": SubResource("Animation_vy6qu"),
 &"1": SubResource("Animation_ridmi"),
 &"10": SubResource("Animation_3e0vf"),
+&"11": SubResource("Animation_lvqxb"),
+&"12": SubResource("Animation_u4yp8"),
+&"13": SubResource("Animation_enf0y"),
+&"14": SubResource("Animation_h8kaa"),
+&"15": SubResource("Animation_l38k8"),
+&"16": SubResource("Animation_e4vot"),
+&"17": SubResource("Animation_30bqp"),
+&"18": SubResource("Animation_8mlcc"),
+&"19": SubResource("Animation_idkkj"),
 &"2": SubResource("Animation_p47bv"),
+&"20": SubResource("Animation_jf5h8"),
+&"21": SubResource("Animation_6bq4q"),
+&"22": SubResource("Animation_dgq6q"),
+&"23": SubResource("Animation_e8ato"),
 &"3": SubResource("Animation_811q2"),
 &"4": SubResource("Animation_3npmm"),
 &"5": SubResource("Animation_7d2fe"),
@@ -692,6 +1616,9 @@ _data = {
 &"RESET": SubResource("Animation_qk73h"),
 &"fim_tutorial": SubResource("Animation_nrgr8")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie5d1"]
+texture = ExtResource("6_p47bv")
 
 [node name="Tutorial" type="Control" unique_id=258195606]
 layout_mode = 3
@@ -705,9 +1632,12 @@ script = ExtResource("1_kcami")
 [node name="TutorialPopup" type="PopupPanel" parent="." unique_id=1611862283]
 unique_name_in_owner = true
 oversampling_override = 1.0
-position = Vector2i(104, 165)
+position = Vector2i(74, 165)
 size = Vector2i(1300, 250)
+nonclient_area = Rect2i(0, 0, 248, 42)
+mouse_passthrough_polygon = PackedVector2Array(0, 0, 248, 0, 248, 42, 0, 42)
 visible = true
+mouse_passthrough = true
 min_size = Vector2i(1300, 250)
 max_size = Vector2i(1300, 250)
 theme_override_styles/panel = SubResource("StyleBoxTexture_kcami")
@@ -720,8 +1650,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1300.0
-offset_bottom = 250.0
+offset_left = -650.0
+offset_top = -125.0
+offset_right = 650.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 23
@@ -746,7 +1678,59 @@ libraries/ = SubResource("AnimationLibrary_ridmi")
 autoplay = &"0"
 
 [node name="Control" type="Control" parent="." unique_id=317318158]
+z_index = 10
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_qk73h")
+
+[node name="Control2" type="Control" parent="." unique_id=1620951336]
+z_index = 10
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_qk73h")
+
+[node name="PortaAnd" parent="." unique_id=1581419183 instance=ExtResource("5_ridmi")]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+z_index = 10
+position = Vector2(571, 1012)
+tipo = 22
+
+[node name="PortaAnd2" parent="." unique_id=170969659 instance=ExtResource("5_ridmi")]
+unique_name_in_owner = true
+process_mode = 4
+visible = false
+z_index = 10
+position = Vector2(571, 1012)
+tipo = 22
+
+[node name="Line2D" type="Line2D" parent="." unique_id=810237523]
+z_index = 10
+width = 3.0
+default_color = Color(0.7642523, 0, 0, 1)
+
+[node name="AcceptDialog" type="AcceptDialog" parent="." unique_id=1202308997]
+process_mode = 4
+oversampling_override = 1.0
+title = "SISTEMA"
+initial_position = 1
+size = Vector2i(400, 300)
+exclusive = false
+unfocusable = true
+ok_button_text = "OK"
+
+[node name="PularTutorialButton" type="Button" parent="." unique_id=402222933]
+z_index = 10
+layout_mode = 0
+offset_right = 248.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_ie5d1")
+text = "PULAR TUTORIAL"
+
+[connection signal="mouse_entered" from="PularTutorialButton" to="." method="_on_pular_tutorial_button_mouse_entered"]
+[connection signal="mouse_exited" from="PularTutorialButton" to="." method="_on_pular_tutorial_button_mouse_exited"]
