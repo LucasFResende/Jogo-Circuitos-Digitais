@@ -8,6 +8,7 @@ var mouse_selecao = "res://addons/cursores/Hand1.png"
 var mouse_mover = "res://addons/cursores/mover_arrow.png"
 var jogo_iniciado:bool = false
 var config: Dictionary
+var tutorial_finalizado:bool
 
 const _ARQUIVO_ORIGINAL := "res://config.json"
 const _ARQUIVO_USUARIO := "user://config.json"
@@ -15,12 +16,14 @@ const _ARQUIVO_USUARIO := "user://config.json"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	carregar_arquivo()
+	print(config)
 	await get_tree().process_frame
 	if config["modo"] == "fullscreen":
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		var resolucao:Vector2i = Vector2i(config["resolucao"][0],config["resolucao"][1])
 		DisplayServer.window_set_size(resolucao)
+	tutorial_finalizado = config["tutorial_finalizado"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -81,4 +84,14 @@ func carregar_arquivo() -> void:
 
 	var conteudo := arquivo.get_as_text()
 	config = JSON.parse_string(conteudo)
+	arquivo.close()
+
+func atualizar_arquivo() -> void:
+	print("ATUALIZA: \n", config)
+	var arquivo := FileAccess.open(
+		_ARQUIVO_USUARIO,
+		FileAccess.WRITE
+	)
+
+	arquivo.store_string(JSON.stringify(config, "\t"))
 	arquivo.close()

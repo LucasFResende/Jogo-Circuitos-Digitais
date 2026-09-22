@@ -9,7 +9,6 @@ var resolucoes: Array[Vector2i] = [
 	Vector2i(854, 480),
 	Vector2i(640, 360)
 ]
-const ARQUIVO_USUARIO := "user://config.json"
 var resolucao_atual: Vector2i
 
 func _ready() -> void:
@@ -55,14 +54,5 @@ func _on_resolucao_button_item_selected(index: int) -> void:
 
 
 func _on_button_pressed() -> void:
-	atualizar_arquivo()
+	Global.atualizar_arquivo()
 	call_deferred("queue_free")
-
-func atualizar_arquivo() -> void:
-	var arquivo := FileAccess.open(
-		ARQUIVO_USUARIO,
-		FileAccess.WRITE
-	)
-
-	arquivo.store_string(JSON.stringify(Global.config, "\t"))
-	arquivo.close()

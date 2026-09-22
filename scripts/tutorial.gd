@@ -15,6 +15,8 @@ var sobre_pular_tutorial:bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Global.tutorial_finalizado:
+		queue_free()
 	tutorial_iniciado = true
 	principal = get_tree().current_scene.get_node("/root/Principal")
 
@@ -27,14 +29,16 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if sobre_pular_tutorial:
-			Global.mudar_mouse_padrao()
-			call_deferred("queue_free")
+			pular_tutorial()
 		if anim.is_playing():
 			anim.pause()
 			anim.advance(anim.current_animation_length - anim.current_animation_position)
 			return
 		contador_fala += 1
 		if anim.get_animation_list().size() - 2 == contador_fala:
+			Global.tutorial_finalizado = true
+			Global.atualizar_arquivo()
+			Global.config["tutorial_finalizado"] = true
 			anim.play("fim_tutorial")
 		else:
 			anim.play(str(contador_fala))
@@ -71,8 +75,11 @@ func ativar_porta(num_porta:int) -> void:
 
 
 func pular_tutorial() -> void:
-	print("AAAAAAA")
-	queue_free()
+	Global.mudar_mouse_padrao()
+	Global.tutorial_finalizado = true
+	Global.config["tutorial_finalizado"] = true
+	Global.atualizar_arquivo()
+	call_deferred("queue_free")
 
 
 func _on_pular_tutorial_button_mouse_entered() -> void:
