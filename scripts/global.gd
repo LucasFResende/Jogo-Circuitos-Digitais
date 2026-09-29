@@ -16,7 +16,6 @@ const _ARQUIVO_USUARIO := "user://config.json"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	carregar_arquivo()
-	print(config)
 	await get_tree().process_frame
 	if config["modo"] == "fullscreen":
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
@@ -87,7 +86,6 @@ func carregar_arquivo() -> void:
 	arquivo.close()
 
 func atualizar_arquivo() -> void:
-	print("ATUALIZA: \n", config)
 	var arquivo := FileAccess.open(
 		_ARQUIVO_USUARIO,
 		FileAccess.WRITE

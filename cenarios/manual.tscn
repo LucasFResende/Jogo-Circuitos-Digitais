@@ -1,7 +1,34 @@
 [gd_scene format=3 uid="uid://batc31p0ilsuq"]
 
+[ext_resource type="Script" uid="uid://c0kwh7i2qxiy5" path="res://scripts/manual.gd" id="1_8o0m7"]
 [ext_resource type="Texture2D" uid="uid://yied5ymrash" path="res://addons/cenario/UI-Livro.png" id="1_qf731"]
 [ext_resource type="PackedScene" uid="uid://begdjq2f7k3lr" path="res://cenarios/fechar_button.tscn" id="2_cvp6b"]
+[ext_resource type="Texture2D" uid="uid://qgbx48314ie5" path="res://addons/paginas_manual/num_bin.png" id="3_3licm"]
+[ext_resource type="Texture2D" uid="uid://jqgg5wcein04" path="res://addons/paginas_manual/tab_ver.png" id="4_afk2w"]
+[ext_resource type="Texture2D" uid="uid://cp3chqeqd7key" path="res://addons/cenario/botao_voltar_hover.png" id="6_g3nd4"]
+[ext_resource type="Texture2D" uid="uid://tgwafav4cppd" path="res://addons/cenario/botao_voltar.png" id="7_4y8vm"]
+[ext_resource type="Texture2D" uid="uid://cibnqtuc4dgq8" path="res://addons/cenario/seta.png" id="8_g3nd4"]
+[ext_resource type="Script" uid="uid://d2lumyyk4au73" path="res://scripts/sumario_button.gd" id="9_4y8vm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7io70"]
+texture = ExtResource("7_4y8vm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1574"]
+texture = ExtResource("6_g3nd4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4y8vm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7io70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upjgu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4vtq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrms3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74co2"]
 
 [node name="Manual" type="Control" unique_id=632933793]
 layout_mode = 3
@@ -10,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8o0m7")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1184364903]
 layout_mode = 0
@@ -31,3 +59,537 @@ offset_bottom = -411.0
 grow_horizontal = 2
 grow_vertical = 2
 no_pai = NodePath("..")
+
+[node name="PaginaContainer" type="Control" parent="." unique_id=397498179]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="PaginaVisivel1" type="TextureRect" parent="PaginaContainer" unique_id=166596939]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 872)
+custom_maximum_size = Vector2(800, 872)
+layout_mode = 0
+offset_left = 152.0
+offset_top = 104.0
+offset_right = 952.0
+offset_bottom = 976.0
+texture = ExtResource("3_3licm")
+
+[node name="PaginaVisivel2" type="TextureRect" parent="PaginaContainer" unique_id=2077825498]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(800, 872)
+custom_maximum_size = Vector2(800, 872)
+layout_mode = 0
+offset_left = 968.0
+offset_top = 104.0
+offset_right = 1768.0
+offset_bottom = 976.0
+texture = ExtResource("4_afk2w")
+
+[node name="VoltarButton" type="Button" parent="PaginaContainer" unique_id=134231408]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -232.0
+offset_right = 116.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(120, 231)
+theme_override_styles/normal = SubResource("StyleBoxTexture_7io70")
+theme_override_styles/hover = SubResource("StyleBoxTexture_f1574")
+icon = ExtResource("7_4y8vm")
+icon_alignment = 1
+
+[node name="MenuContainer" type="Control" parent="." unique_id=791240379]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuContainer" unique_id=1836985152]
+custom_minimum_size = Vector2(800, 872)
+custom_maximum_size = Vector2(800, 872)
+layout_mode = 0
+offset_left = 152.0
+offset_top = 104.0
+offset_right = 952.0
+offset_bottom = 976.0
+
+[node name="Label" type="Label" parent="MenuContainer/VBoxContainer" unique_id=222984749]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "SUMÁRIO"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1304463519]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "1. Circuito Digital"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+
+[node name="Button2" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1388868055]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "2. Número Binário"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+
+[node name="Button3" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1533298725]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "3. Tabela Verdade"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 2
+
+[node name="Button4" type="Button" parent="MenuContainer/VBoxContainer" unique_id=851782008]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4. Porta Lógica"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 2
+
+[node name="Button5" type="Button" parent="MenuContainer/VBoxContainer" unique_id=654384255]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4.1. Porta OR"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 4
+
+[node name="Button6" type="Button" parent="MenuContainer/VBoxContainer" unique_id=52086089]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4.2. Porta AND"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 4
+
+[node name="Button7" type="Button" parent="MenuContainer/VBoxContainer" unique_id=946019295]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4.3. Porta NOT"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 6
+
+[node name="Button8" type="Button" parent="MenuContainer/VBoxContainer" unique_id=432767498]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4.4. Porta NOR"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 6
+
+[node name="Button9" type="Button" parent="MenuContainer/VBoxContainer" unique_id=121716769]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4.5. Porta NAND"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 8
+
+[node name="Button10" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1069307657]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4.6. Porta XOR"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 8
+
+[node name="Button11" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1989588325]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "4.7. Porta XNOR"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 10
+
+[node name="Button12" type="Button" parent="MenuContainer/VBoxContainer" unique_id=50836632]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "5. Álgebra e Expressões Booleanas"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 10
+
+[node name="Button13" type="Button" parent="MenuContainer/VBoxContainer" unique_id=349549582]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "6. Teoremas Booleanas"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 12
+
+[node name="Button14" type="Button" parent="MenuContainer/VBoxContainer" unique_id=857012460]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "7. Teoremas de Demorgan"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 12
+
+[node name="Button15" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1100147280]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "8. Simplificação de Circuitos Lógicos"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 14
+
+[node name="Button16" type="Button" parent="MenuContainer/VBoxContainer" unique_id=539363310]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "9. Mapas de Karnaugh"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 14
+
+[node name="Button17" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1935707132]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "11. Mapas de Karnaugh - Em pares"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 16
+
+[node name="Button18" type="Button" parent="MenuContainer/VBoxContainer" unique_id=1232308798]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "12. Mapas de Karnaugh - Em quartetos"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 18
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuContainer" unique_id=214365016]
+custom_minimum_size = Vector2(800, 872)
+custom_maximum_size = Vector2(800, 872)
+layout_mode = 0
+offset_left = 968.0
+offset_top = 104.0
+offset_right = 1768.0
+offset_bottom = 976.0
+
+[node name="Button19" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=538585585]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "13. Mapas de Karnaugh - Em octetos"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 18
+
+[node name="Button20" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=2064716698]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "13. Mapas de Karnaugh - Parte 2"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 20
+
+[node name="Button" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1409012280]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "14. Aritmética digital"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 22
+
+[node name="Button2" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=2067547093]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "14.1. Adição binária"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 22
+
+[node name="Button3" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=2078918624]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "14.2. Subtração binária"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 24
+
+[node name="Button4" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=322641253]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "14.3. Overflow aritmético"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 24
+
+[node name="Button5" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=152197522]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "15. Circuitos Aritméticos"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 26
+
+[node name="Button6" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=558662987]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "16. Pulsos"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 26
+
+[node name="Button7" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1893082012]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "17. Sinais de clock"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 28
+
+[node name="Button8" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1325102647]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "18. Flip-flop"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 28
+
+[node name="Button9" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1997960291]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "18.1. Latch com portas NAND"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 30
+
+[node name="Button10" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=55431918]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "18.2. Latch com portas NOR"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 30
+
+[node name="Button11" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1588698817]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "18.3. Flip-Flop S-R com clock"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 32
+
+[node name="Button12" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1015697762]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "18.4. Flip-Flop J-K com clock"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 32
+
+[node name="Button13" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1342863241]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "18.5. Flip-Flop D com clock"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 34
+
+[node name="Button14" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1419213346]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "18.6. Entradas assíncronas"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 34
+
+[node name="Button15" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=1153319580]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "19. Registradores"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 36
+
+[node name="Button16" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=611896263]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "20. Contadores"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 38
+
+[node name="Button17" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=622391299]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "20.1. Contadores Assíncronos"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 38
+
+[node name="Button18" type="Button" parent="MenuContainer/VBoxContainer2" unique_id=78105172]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "20.2. Contadores Síncronos"
+flat = true
+alignment = 0
+script = ExtResource("9_4y8vm")
+index = 38
+
+[node name="EsquerdaButton" type="Button" parent="." unique_id=297217565]
+z_index = 1
+layout_mode = 0
+offset_left = 85.0
+offset_top = 449.0
+offset_right = 132.0
+offset_bottom = 512.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4y8vm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7io70")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_upjgu")
+icon = ExtResource("8_g3nd4")
+icon_alignment = 1
+
+[node name="DireiraButton" type="Button" parent="." unique_id=957528352]
+z_index = 1
+layout_mode = 0
+offset_left = 1845.0
+offset_top = 449.0
+offset_right = 1892.0
+offset_bottom = 512.0
+scale = Vector2(-1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4vtq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hrms3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_74co2")
+icon = ExtResource("8_g3nd4")
+icon_alignment = 1
+
+[connection signal="mouse_entered" from="PaginaContainer/VoltarButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PaginaContainer/VoltarButton" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="PaginaContainer/VoltarButton" to="." method="_on_voltar_button_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button" to="MenuContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button2" to="MenuContainer/VBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button3" to="MenuContainer/VBoxContainer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button4" to="MenuContainer/VBoxContainer/Button4" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button5" to="MenuContainer/VBoxContainer/Button5" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button6" to="MenuContainer/VBoxContainer/Button6" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button7" to="MenuContainer/VBoxContainer/Button7" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button8" to="MenuContainer/VBoxContainer/Button8" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button9" to="MenuContainer/VBoxContainer/Button9" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button10" to="MenuContainer/VBoxContainer/Button10" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button11" to="MenuContainer/VBoxContainer/Button11" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button12" to="MenuContainer/VBoxContainer/Button12" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button13" to="MenuContainer/VBoxContainer/Button13" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button14" to="MenuContainer/VBoxContainer/Button14" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button15" to="MenuContainer/VBoxContainer/Button15" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button16" to="MenuContainer/VBoxContainer/Button16" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button17" to="MenuContainer/VBoxContainer/Button17" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer/Button18" to="MenuContainer/VBoxContainer/Button18" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button19" to="MenuContainer/VBoxContainer2/Button19" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button20" to="MenuContainer/VBoxContainer2/Button20" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button" to="MenuContainer/VBoxContainer2/Button" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button2" to="MenuContainer/VBoxContainer2/Button2" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button3" to="MenuContainer/VBoxContainer2/Button3" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button4" to="MenuContainer/VBoxContainer2/Button4" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button5" to="MenuContainer/VBoxContainer2/Button5" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button6" to="MenuContainer/VBoxContainer2/Button6" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button7" to="MenuContainer/VBoxContainer2/Button7" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button8" to="MenuContainer/VBoxContainer2/Button8" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button9" to="MenuContainer/VBoxContainer2/Button9" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button10" to="MenuContainer/VBoxContainer2/Button10" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button11" to="MenuContainer/VBoxContainer2/Button11" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button12" to="MenuContainer/VBoxContainer2/Button12" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button13" to="MenuContainer/VBoxContainer2/Button13" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button14" to="MenuContainer/VBoxContainer2/Button14" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button15" to="MenuContainer/VBoxContainer2/Button15" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button16" to="MenuContainer/VBoxContainer2/Button16" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button17" to="MenuContainer/VBoxContainer2/Button17" method="_on_pressed"]
+[connection signal="pressed" from="MenuContainer/VBoxContainer2/Button18" to="MenuContainer/VBoxContainer2/Button18" method="_on_pressed"]
+[connection signal="mouse_entered" from="EsquerdaButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="EsquerdaButton" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="EsquerdaButton" to="." method="_on_esquerda_button_pressed"]
+[connection signal="mouse_entered" from="DireiraButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DireiraButton" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="DireiraButton" to="." method="_on_direira_button_pressed"]
