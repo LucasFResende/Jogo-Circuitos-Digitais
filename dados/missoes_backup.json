@@ -1,65 +1,906 @@
 {
-	"1" : {
+	"1": {
+		"completo": false,
+		"descricao": "Para seus primeiros trabalhos você testar o funcionamento das portas individualmente. Por isso, neste trabalho seu objetivo é tester uma porta lógica AND, verificando as saídas para cada conjunto de entradas",
+		"entradas": 2,
+		"liberado": true,
+		"resposta": [[0,0,0,1]],
+		"saidas": 1,
 		"titulo": "Teste da porta AND",
-		"liberado": true,
-		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica AND, verificando as saídas para cada conjunto de entradas",
-		"completo": false,
-		"resposta": [[0],[0],[0],[1]],
-		"entradas": 2,
-		"saidas": 1,
+		"libera":["2","3","4","5","6","7"],
+		"imagem":null,
+		"tipo": "combinacional",
 	},
-	"2" : {
-		"titulo": "Teste da porta OR",
-		"liberado": true,
+	"2": {
+		"completo": false,
 		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica OR, verificando as saídas para cada conjunto de entradas",
-		"completo": false,
-		"resposta": [[0],[1],[1],[1]],
 		"entradas": 2,
+		"liberado": false,
+		"resposta": [[0,1,1,1]],
 		"saidas": 1,
+		"titulo": "Teste da porta OR",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
 	},
-	"3" : {
-		"titulo": "Teste da porta NOT",
-		"liberado": true,
+	"3": {
+		"completo": false,
 		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica NOT, verificando as saídas para cada conjunto de entradas",
-		"completo": false,
-		"resposta": [[0],[1]],
 		"entradas": 1,
+		"liberado": false,
+		"resposta": [[0,1]],
 		"saidas": 1,
+		"titulo": "Teste da porta NOT",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
 	},
-	"4" : {
-		"titulo": "Teste da porta NAND",
-		"liberado": true,
+	"4": {
+		"completo": false,
 		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica NAND, verificando as saídas para cada conjunto de entradas",
-		"completo": false,
-		"resposta": [[1],[1],[1],[0]],
 		"entradas": 2,
+		"liberado": false,
+		"resposta": [[1,1,1,0]],
 		"saidas": 1,
+		"titulo": "Teste da porta NAND",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
 	},
-	"5" : {
-		"titulo": "Teste da porta NOR",
-		"liberado": true,
+	"5": {
+		"completo": false,
 		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica NOR, verificando as saídas para cada conjunto de entradas",
-		"completo": false,
-		"resposta": [[1],[0],[0],[0]],
 		"entradas": 2,
+		"liberado": false,
+		"resposta": [[1,0,0,0]],
 		"saidas": 1,
+		"titulo": "Teste da porta NOR",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
 	},
-	"6" : {
-		"titulo": "Teste da porta XNOR",
-		"liberado": true,
+	"6": {
+		"completo": false,
 		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica XNOR, verificando as saídas para cada conjunto de entradas",
-		"completo": false,
-		"resposta": [[1],[0],[0],[1]],
 		"entradas": 2,
+		"liberado": false,
+		"resposta": [[1,0,0,1]],
 		"saidas": 1,
+		"titulo": "Teste da porta XNOR",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
 	},
-	"7" : {
-		"titulo": "Teste da porta XOR",
-		"liberado": true,
-		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica XOR, verificando as saídas para cada conjunto de entradas",
+	"7": {
 		"completo": false,
-		"resposta": [[0],[1],[1],[0]],
+		"descricao": "Neste trabalho seu objetivo é tester uma porta lógica XOR, verificando as saídas para cada conjunto de entradas",
 		"entradas": 2,
+		"liberado": false,
+		"resposta": [[0,1,1,0]],
 		"saidas": 1,
-	}
+		"titulo": "Teste da porta XOR",
+		"libera":["8"],
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"8":{
+		"completo": false,
+		"descricao": "Agora vamos trabalhar a equivalência das portas, ou seja, uma porta pode ser substituida por um circuito para produzir o mesmo resultado caso aquela porta não esteja disponível. Para isso vamos começar com a equivalente da porta AND.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [[0,0,0,1]],
+		"saidas": 1,
+		"titulo": "Porta equivalente a porta AND",
+		"libera":["9","10","11"],
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"9":{
+		"completo": false,
+		"descricao": "Agora vamos trabalhar com a equivalente da porta OR.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [[0,1,1,1]],
+		"saidas": 1,
+		"titulo": "Porta equivalente a porta OR",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"10":{
+		"completo": false,
+		"descricao": "Agora vamos trabalhar com a equivalente da porta NAND.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [[1,1,1,0]],
+		"saidas": 1,
+		"titulo": "Porta equivalente a porta NAND",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"11":{
+		"completo": false,
+		"descricao": "Agora vamos trabalhar com a equivalente da porta NOR.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [[1,0,0,0]],
+		"saidas": 1,
+		"titulo": "Porta equivalente a porta NOR",
+		"libera":["12"],
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"12":{
+		"completo": false,
+		"descricao": "Agora vamor trabalhar com a montagem de circuitos a partir de expressões algébicas. Para isso os próximos trabalhos apresentarão expressões para serem convertidas em circuitos.",
+		"entradas": 4,
+		"liberado": false,
+		"resposta": [[1,1,1,1,1,1,1,0,1,1,1,0,1,1,1,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 1",
+		"libera":["13","14","15","16"],
+		"imagem":"res://addons/missoes/missao_12.png",
+		"tipo": "combinacional",
+	},
+	"13":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à expressão abaixo.",
+		"entradas": 4,
+		"liberado": false,
+		"resposta": [[1,0,0,0,1,0,0,0,1,1,1,1,1,0,0,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 2",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_13.png",
+		"tipo": "combinacional",
+	},
+	"14":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à expressão abaixo.",
+		"entradas": 3,
+		"liberado": false,
+		"resposta": [[1,0,0,0,1,0,1,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 3",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_14.png",
+		"tipo": "combinacional",
+	},
+	"15":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à expressão abaixo.",
+		"entradas": 3,
+		"liberado": false,
+		"resposta": [[0,0,0,0,0,0,0,1]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 4",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_15.png",
+		"tipo": "combinacional",
+	},
+	"16":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à expressão abaixo.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [[0,1,1,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 5",
+		"libera":["17"],
+		"imagem":"res://addons/missoes/missao_16.png",
+		"tipo": "combinacional",
+	},
+	"17":{
+		"completo": false,
+		"descricao": "Agora você irá trabalhar como montar um circuito usando apenas a tabela verdade. Com isso, com base na tabela verdade abaixo monte o circuito correspondente.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [[1,1,0,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da tabela verdade 1",
+		"libera":["18","19","20","21"],
+		"imagem":"res://addons/missoes/missao_17.png",
+		"tipo": "combinacional",
+	},
+	"18":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à tabela verdade abaixo.",
+		"entradas": 3,
+		"liberado": false,
+		"resposta": [[0,0,1,1,0,0,0,1]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 2",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_18.png",
+		"tipo": "combinacional",
+	},
+	"19":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à tabela verdade abaixo.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [[0,1,1,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 3",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_19.png",
+		"tipo": "combinacional",
+	},
+	"20":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à tabela verdade abaixo.",
+		"entradas": 3,
+		"liberado": false,
+		"resposta": [[0,0,0,1,0,1,1,1]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 4",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_20.png",
+		"tipo": "combinacional",
+	},
+	"21":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente à tabela verdade abaixo.",
+		"entradas": 4,
+		"liberado": false,
+		"resposta": [[0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir da expressão 5",
+		"libera":["22"],
+		"imagem":"res://addons/missoes/missao_21.png",
+		"tipo": "combinacional",
+	},
+	"22":{
+		"completo": false,
+		"descricao": "Agora você irá trabalhar o conceito de mapas de karnaugh. Para isso você receberá ou uma tabela verdade para montar o mapa ou receberá o mapa já montado, em ambos os casos deverá montar o circuito correspondente.",
+		"entradas": 4,
+		"liberado": false,
+		"resposta": [[1,1,1,1,1,1,0,0,0,0,1,1,0,0,1,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir do mapa de karnaugh 1",
+		"libera":["23","24","25","26"],
+		"imagem":"res://addons/missoes/missao_22.png",
+		"tipo": "combinacional",
+	},
+	"23":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente a partir do mapa de karnaugh abaixo.",
+		"entradas": 4,
+		"liberado": false,
+		"resposta": [[1,0,1,1,1,0,1,0,1,0,1,1,0,0,0,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir do mapa de karnaugh 2",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_23.png",
+		"tipo": "combinacional",
+	},
+	"24":{
+		"completo": false,
+		"descricao": "Monte o circuito correspondente a partir do mapa de karnaugh abaixo.",
+		"entradas": 3,
+		"liberado": false,
+		"resposta": [[1,1,0,0,1,1,1,0]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir do mapa de karnaugh 3",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_24.png",
+		"tipo": "combinacional",
+	},
+	"25":{
+		"completo": false,
+		"descricao": "Monte mapa de karnaugh a partir da tabela verdade abaixo e depois monte o circuito correspondente.",
+		"entradas": 4,
+		"liberado": false,
+		"resposta": [[0,0,0,1,1,0,0,1,0,0,0,1,0,0,0,1]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir do mapa de karnaugh 4",
+		"libera":null,
+		"imagem":"res://addons/missoes/missao_25.png",
+		"tipo": "combinacional",
+	},
+	"26":{
+		"completo": false,
+		"descricao": "Monte mapa de karnaugh a partir da tabela verdade abaixo e depois monte o circuito correspondente.",
+		"entradas": 3,
+		"liberado": false,
+		"resposta": [[1,0,1,1,1,0,0,1]],
+		"saidas": 1,
+		"titulo": "Montar circuito a partir do mapa de karnaugh 5",
+		"libera":["27"],
+		"imagem":"res://addons/missoes/missao_26.png",
+		"tipo": "combinacional",
+	},
+	"27":{
+		"completo": false,
+		"descricao": "Monte um circuito somador.",
+		"entradas": 3,
+		"liberado": false,
+		"resposta": [[0,1,1,0,1,0,0,1],[0,0,0,1,0,1,1,1]],
+		"saidas": 2,
+		"titulo": "Monte um circuito somador",
+		"libera":["28"],
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"28":{
+		"completo": false,
+		"descricao": "Agora você será introduzido aos flip-flops. Primeiro será o flip-flop S-R.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [["não muda",1,0,"Inválido"],["não muda",0,1,"Inválido"]],
+		"saidas": 2,
+		"titulo": "Teste o flip-flop S-R",
+		"libera":["29","30","31"],
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"29":{
+		"completo": false,
+		"descricao": "Agora será introduzido ao flip-flop S-R com clock.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [["não muda",1,0,"ambíguo"],["não muda",0,1,"ambíguo"]],
+		"saidas": 2,
+		"titulo": "Teste o flip-flop S-R com clock",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"30":{
+		"completo": false,
+		"descricao": "Agora será introduzido ao flip-flop J-K com clock.",
+		"entradas": 2,
+		"liberado": false,
+		"resposta": [["não muda",1,0,"Q'"],["não muda",0,1,"Q"]],
+		"saidas": 2,
+		"titulo": "Teste o flip-flop J-K com clock",
+		"libera":null,
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"31":{
+		"completo": false,
+		"descricao": "Agora será introduzido ao flip-flop D com clock.",
+		"entradas": 1,
+		"liberado": false,
+		"resposta": [[0,1],[1,0]],
+		"saidas": 2,
+		"titulo": "Teste o flip-flop D com clock",
+		"libera":["32"],
+		"imagem":null,
+		"tipo": "combinacional",
+	},
+	"32":{
+		"completo": false,
+		"descricao": "Agora será introduzido o conceito de registradores. Para isso, vamos começar com o registrador de entrada paralela e saída paralela (Parallel In/Parallel Out – PIPO).",
+		"entradas": 4,
+		"liberado": false,
+		"testes": [
+		{
+			"acao": "definir",
+			"entradas": [1, 0, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 0]
+		},
+		{
+			"acao": "definir",
+			"entradas": [0, 1, 1, 0]
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 1, 0]
+		}
+	],
+		"saidas": 4,
+		"titulo": "Registrador PIPO",
+		"libera":["33"],
+		"imagem":null,
+		"tipo":"sequencial"
+	},
+	"33": {
+	"completo": false,
+	"descricao": "Agora vamos trabalhar com o registrador de entrada serial e saída serial (Serial In / Serial Out – SISO).",
+	"entradas": 1,
+	"liberado": false,
+	"testes": [
+		{
+			"acao": "definir",
+			"entradas": [1]
+		},
+		{
+			"acao": "verificar",
+			"saida": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0]
+		},
+		{
+			"acao": "definir",
+			"entradas": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1]
+		}
+	],
+	"saidas": 1,
+	"titulo": "Registrador SISO",
+	"libera": ["34"],
+	"imagem": null,
+	"tipo": "sequencial"
+	},
+	"34": {
+	"completo": false,
+	"descricao": "Agora vamos trabalhar com o registrador de entrada paralela e saída serial (Parallel In / Serial Out – PISO).",
+	"entradas": 4,
+	"liberado": false,
+	"testes": [
+		{
+			"acao": "definir",
+			"entradas": [1, 0, 1, 0]
+		},
+		{
+			"acao": "verificar",
+			"saida": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0]
+		}
+	],
+	"saidas": 1,
+	"titulo": "Registrador PISO",
+	"libera": ["35"],
+	"imagem": null,
+	"tipo": "sequencial"
+	},
+	"35": {
+	"completo": false,
+	"descricao": "Agora vamos trabalhar com o registrador de entrada serial e saída paralela (Serial In / Parallel Out – SIPO).",
+	"entradas": 1,
+	"liberado": false,
+	"testes": [
+		{
+			"acao": "definir",
+			"entradas": [1]
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 0, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 0, 0]
+		},
+		{
+			"acao": "definir",
+			"entradas": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 0]
+		},
+		{
+			"acao": "definir",
+			"entradas": [1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 0]
+		},
+		{
+			"acao": "definir",
+			"entradas": [0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 1]
+		}
+	],
+	"saidas": 4,
+	"titulo": "Registrador SIPO",
+	"libera": ["36"],
+	"imagem": null,
+	"tipo": "sequencial"
+	},
+	"36": {
+	"completo": false,
+	"descricao": "Agora vamos trabalhar com os contadores. Monte um contador assíncrono de 4 bits que incremente seu valor a cada pulso de clock.",
+	"entradas": 1,
+	"liberado": false,
+	"testes": [
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 0, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 0, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 0, 0]
+		}
+	],
+	"saidas": 4,
+	"titulo": "Monte um contador assíncrono de 4 bits",
+	"libera": ["37"],
+	"imagem": null,
+	"tipo": "sequencial"
+	},
+	"37": {
+	"completo": false,
+	"descricao": "Agora vamos trabalhar com os contadores síncronos. Monte um contador síncrono de 4 bits que incremente seu valor a cada pulso de clock.",
+	"entradas": 1,
+	"liberado": false,
+	"testes": [
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 0, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 0, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 0, 0]
+		}
+	],
+	"saidas": 4,
+	"titulo": "Monte um contador síncrono de 4 bits",
+	"libera": ["38"],
+	"imagem": null,
+	"tipo": "sequencial"
+},
+	"38": {
+	"completo": false,
+	"descricao": "Agora vamos trabalhar com contadores decrescentes. Monte um contador síncrono decrescente de 4 bits que diminua seu valor a cada pulso de clock.",
+	"entradas": 1,
+	"liberado": false,
+	"testes": [
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 1, 0]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 1, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 0, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 0, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 1]
+		},
+		{
+			"acao": "verificar",
+			"saida": [0, 1, 0, 1]
+		},
+		{
+			"acao": "clock"
+		},
+		{
+			"acao": "verificar",
+			"saida": [1, 1, 1, 0]
+		}
+	],
+	"saidas": 4,
+	"titulo": "Monte um contador síncrono decrescente de 4 bits",
+	"libera": [],
+	"imagem": null,
+	"tipo": "sequencial"
+}
 }

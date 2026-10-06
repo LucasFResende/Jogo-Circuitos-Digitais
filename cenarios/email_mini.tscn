@@ -50,6 +50,12 @@ custom_maximum_size = Vector2(1912, -1)
 layout_mode = 2
 autowrap_mode = 3
 
+[node name="Missao" type="TextureRect" parent="VBoxContainer" unique_id=1364687967]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+stretch_mode = 5
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1202108725]
 layout_mode = 2
 alignment = 1

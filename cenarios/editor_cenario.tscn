@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://n3qcxknitmtn" path="res://objetos/registrador_sipo.tscn" id="24_8vbqg"]
 [ext_resource type="PackedScene" uid="uid://d0kgp6usa4r7q" path="res://objetos/registrador_siso.tscn" id="25_0iaeh"]
 [ext_resource type="PackedScene" uid="uid://b2kpsinqmlqkp" path="res://objetos/contador_assinc.tscn" id="26_wpb5d"]
+[ext_resource type="PackedScene" uid="uid://cegl8v1r036yb" path="res://objetos/somador.tscn" id="27_do771"]
 [ext_resource type="PackedScene" uid="uid://ch4f8n4wv1si2" path="res://objetos/contador_decr.tscn" id="27_hj7ip"]
 [ext_resource type="PackedScene" uid="uid://bh8yic8h7w8" path="res://objetos/contador_sinc.tscn" id="28_vs5xv"]
 
@@ -189,7 +190,7 @@ mouse_filter = 2
 theme_override_constants/separation = 140
 alignment = 1
 script = ExtResource("5_miamp")
-lista = Array[PackedScene]([ExtResource("5_rc6gm"), ExtResource("6_miamp"), ExtResource("7_pfohb"), ExtResource("8_v0pkc"), ExtResource("9_l38a8"), ExtResource("10_613l6"), ExtResource("11_648rf"), ExtResource("20_kkdjs"), ExtResource("17_v2mkt"), ExtResource("19_68kot"), ExtResource("20_ydorw"), ExtResource("21_ihvhe"), ExtResource("22_ojqcs"), ExtResource("23_3ff41"), ExtResource("24_8vbqg"), ExtResource("25_0iaeh"), ExtResource("26_wpb5d"), ExtResource("27_hj7ip"), ExtResource("28_vs5xv")])
+lista = Array[PackedScene]([ExtResource("5_rc6gm"), ExtResource("6_miamp"), ExtResource("7_pfohb"), ExtResource("8_v0pkc"), ExtResource("9_l38a8"), ExtResource("10_613l6"), ExtResource("11_648rf"), ExtResource("20_kkdjs"), ExtResource("17_v2mkt"), ExtResource("19_68kot"), ExtResource("20_ydorw"), ExtResource("21_ihvhe"), ExtResource("22_ojqcs"), ExtResource("23_3ff41"), ExtResource("24_8vbqg"), ExtResource("25_0iaeh"), ExtResource("26_wpb5d"), ExtResource("27_hj7ip"), ExtResource("28_vs5xv"), ExtResource("27_do771")])
 lista_nos = [NodePath("Control"), NodePath("Control2"), NodePath("Control3"), NodePath("Control4"), NodePath("Control5"), NodePath("Control6"), NodePath("Control7")]
 
 [node name="Control" type="Control" parent="Camera2D/UI/HBoxContainer" unique_id=476676322]

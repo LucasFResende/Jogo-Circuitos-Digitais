@@ -40,7 +40,10 @@ func _process(delta: float) -> void:
 		fechar.fechar_no()
 	
 func _on_confirmar_button_pressed() -> void:
-	verificar_resposta()
+	if Missoes.tipo == "sequencial":
+		verificar_sequencial()
+	else:
+		verificar_resposta()
 
 
 func verificar_resposta() -> void:
@@ -72,7 +75,7 @@ func verificar_resposta() -> void:
 				label.text = "Não existe caminho até a saída"
 				for filho in tabela.get_children():
 					filho.queue_free()
-				dialogo.visible = true
+				dialogo.popup_centered()
 				return
 			resultado_saida.append(1 if saida_porta.sinal else 0)
 
@@ -85,17 +88,19 @@ func verificar_resposta() -> void:
 func verificar_resultado() -> void:
 	for i in range(saida.size()):
 		var resultado = saida[i]
-
+		
+		
 		if resultado != respostas_certas[i]:
 			label.text = "RESPOSTA ERRADA"
-			dialogo.visible = true
+			dialogo.popup_centered()
 			return
 
 	label.text = "ACERTOU!\n
 	Confira o email para ver a(s) nova(s) missão(ões)."
-	dialogo.visible = true
+	dialogo.popup_centered()
 	resposta_certa = true
 	Missoes.completo = true
+	Missoes.liberar_prox_missoes()
 	Missoes.atualizar_arquivo()
 
 
@@ -178,10 +183,85 @@ func mostrar_tabela() -> void:
 		for coluna in range(quantidade_saidas):
 			var valor = saida[linha][coluna]
 			var esperado = respostas_certas[linha][coluna]
-
+			
+			if esperado is String:
+				valor = esperado
+				saida[linha][coluna] = esperado
+			
 			# Saída obtida
 			var cor := Color.GREEN if valor == esperado else Color.RED
 			criar_celula(str(valor), cor)
 
 			# Saída esperada
 			criar_celula(str(esperado), Color.WHITE)
+
+func verificar_sequencial() -> void:
+	var clock: Clock = portas.find_child("clock")
+	
+	if clock == null:
+		label.text = "O circuito precisa de um Clock."
+		dialogo.popup_centered()
+		return
+	
+	clock.modo_teste = true
+	
+	var testes = Missoes.testes
+	
+	for indice in range(testes.size()):
+		var teste = testes[indice]
+		
+		match teste["acao"]:
+			
+			"definir":
+				definir_entradas(teste["entradas"])
+			
+			"clock":
+				await aplicar_clock()
+			
+			"verificar":
+				if not verificar_saidas(teste["saida"]):
+					clock.modo_teste = false
+					
+					print("Teste %d falhou." % (indice + 1))
+					
+					label.text = "RESPOSTA ERRADA"
+					dialogo.popup_centered()
+					return
+	
+	clock.modo_teste = false
+	
+	label.text = "ACERTOU!\n" + \
+		"Confira o email para ver a(s) nova(s) missão(ões)."
+	
+	dialogo.popup_centered()
+	resposta_certa = true
+	Missoes.completo = true
+	Missoes.liberar_prox_missoes()
+	Missoes.atualizar_arquivo()
+
+func definir_entradas(valores:Array) -> void:
+	for i in range(valores.size()):
+		var entrada: FonteSinal = entradas.get_child(i)
+		entrada.definir_sinal(valores[i])
+
+func aplicar_clock() -> void:
+	var clock:Clock = portas.find_child("clock")
+	await clock.produzir_pulso()
+
+func verificar_saidas(esperado:Array) -> bool:
+	if esperado.size() != saidas.get_child_count():
+		return false
+	
+	for i in range(esperado.size()):
+		var saida_porta:ReceptorSinal = saidas.get_child(i)
+		
+		if saida_porta.atualizando:
+			return false
+		
+		var valor = 1 if saida_porta.sinal else 0
+		
+		if valor != esperado[i]:
+			return false
+	
+	return true
+			

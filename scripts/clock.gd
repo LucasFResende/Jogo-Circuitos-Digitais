@@ -4,6 +4,7 @@ extends PortaLogica
 var tempo_clock:float = 0
 var tempo_clock_padrao:float
 var iniciado:bool = false
+var modo_teste:bool = false
 
 @onready var dialogo:AcceptDialog = %Dialogo
 @onready var tempo_clock_input: LineEdit = %TempoClockInput
@@ -11,10 +12,11 @@ var iniciado:bool = false
 func _process(delta: float) -> void:
 	if esta_arrastando:
 		global_position = get_global_mouse_position() - clique_offset
+
 	if !pode_duplicar:
 		if !iniciado:
 			dialogo.visible = true
-		else:
+		elif !modo_teste:
 			if tempo_clock<=0:
 				verificar_logica()
 				tempo_clock = tempo_clock_padrao
@@ -48,3 +50,18 @@ func _on_dialogo_confirmed() -> void:
 	tempo_clock_padrao = tempo
 	iniciado = true
 	
+func produzir_pulso() -> void:
+	sinal = false
+	for child in %SaidaLigacao.get_children():
+		child.atualizar()
+	await get_tree().process_frame
+
+	sinal = true
+	for child in %SaidaLigacao.get_children():
+		child.atualizar()
+	await get_tree().process_frame
+
+	sinal = false
+	for child in %SaidaLigacao.get_children():
+		child.atualizar()
+	await get_tree().process_frame

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cegl8v1r036yb"]
+
+[ext_resource type="Texture2D" uid="uid://cmioogixf8bmb" path="res://addons/portas_logicas/somador.png" id="1_l4lmu"]
+[ext_resource type="Script" uid="uid://bylx4qi2aqfys" path="res://scripts/somador.gd" id="2_82c78"]
+[ext_resource type="Script" uid="uid://cf4yuhndq8e5r" path="res://scripts/saida.gd" id="2_sour2"]
+[ext_resource type="Script" uid="uid://cyg3iye50vir6" path="res://scripts/entrada.gd" id="3_82c78"]
+[ext_resource type="Script" uid="uid://o4wedqo7378d" path="res://scripts/adaptar_label.gd" id="5_jxty1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1574"]
+radius = 3.3993487
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ie5d1"]
+radius = 3.3333359
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_texfu"]
+radius = 3.3333335
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ub53g"]
+radius = 3.3333335
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aowou"]
+radius = 3.333332
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(33.333336, 33.333336)
+
+[node name="Somador" type="Sprite2D" unique_id=746634610]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_l4lmu")
+script = ExtResource("2_82c78")
+
+[node name="SaidaLigacao" type="Node2D" parent="." unique_id=1948200389]
+unique_name_in_owner = true
+
+[node name="Saida1" type="Area2D" parent="." unique_id=1067416665 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, -13)
+script = ExtResource("2_sour2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida1" unique_id=417677539]
+shape = SubResource("CircleShape2D_f1574")
+
+[node name="Saida2" type="Area2D" parent="." unique_id=753623748 groups=["saida"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(38, 7)
+script = ExtResource("2_sour2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Saida2" unique_id=2075695209]
+shape = SubResource("CircleShape2D_ie5d1")
+
+[node name="Entrada1" type="Area2D" parent="." unique_id=1279677394 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-9, 28)
+script = ExtResource("3_82c78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada1" unique_id=9102493]
+shape = SubResource("CircleShape2D_texfu")
+
+[node name="Entrada2" type="Area2D" parent="." unique_id=872848406 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-9, -28)
+script = ExtResource("3_82c78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada2" unique_id=575134401]
+shape = SubResource("CircleShape2D_ub53g")
+
+[node name="Entrada3" type="Area2D" parent="." unique_id=956165193 groups=["entrada"]]
+unique_name_in_owner = true
+process_mode = 4
+position = Vector2(-38, 1)
+script = ExtResource("3_82c78")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Entrada3" unique_id=1562727431]
+shape = SubResource("CircleShape2D_aowou")
+
+[node name="ArrastarArea" type="Area2D" parent="." unique_id=1299742711]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrastarArea" unique_id=1604936413]
+shape = SubResource("RectangleShape2D_f1574")
+
+[node name="Nome" type="Label" parent="." unique_id=1415193138]
+unique_name_in_owner = true
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 50.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Somador"
+script = ExtResource("5_jxty1")
+
+[connection signal="input_event" from="Saida1" to="Saida1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida1" to="Saida1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida1" to="Saida1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Saida2" to="Saida2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Saida2" to="Saida2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Saida2" to="Saida2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada1" to="Entrada1" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada1" to="Entrada1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada1" to="Entrada1" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada2" to="Entrada2" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada2" to="Entrada2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada2" to="Entrada2" method="_on_mouse_exited"]
+[connection signal="input_event" from="Entrada3" to="Entrada3" method="_on_input_event"]
+[connection signal="mouse_entered" from="Entrada3" to="Entrada3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Entrada3" to="Entrada3" method="_on_mouse_exited"]

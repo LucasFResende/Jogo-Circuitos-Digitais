@@ -7,12 +7,16 @@ var repetir_dialogo: AcceptDialog
 var aviso_dialogo: AcceptDialog
 
 @onready var completo_sprite: Sprite2D = %Completo
+@onready var missao_sprite:TextureRect = %Missao
 
 func _ready() -> void:
 	if Missoes.missoes[id]["completo"]:
 		%RepetirButton.visible = true
 	else:
 		%AceitarButton.visible = true
+	if Missoes.missoes[id]["imagem"]!=null:
+		missao_sprite.visible = true
+		missao_sprite.texture = load(Missoes.missoes[id]["imagem"])
 
 func _on_repetir_button_pressed() -> void:
 	if Missoes.verificar_completo(id):

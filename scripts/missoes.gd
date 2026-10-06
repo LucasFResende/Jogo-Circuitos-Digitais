@@ -10,6 +10,8 @@ var saidas: int
 var completo: bool = true
 var dados: Dictionary
 var missoes: Dictionary
+var testes:Array
+var tipo:String
 
 
 func _ready() -> void:
@@ -62,32 +64,79 @@ func carregar_arquivo() -> void:
 
 
 func aceitar_missao(id: String) -> void:
+	if not missoes.has(id):
+		push_error("Missão não encontrada: " + id)
+		return
+
 	id_missao_ativa = id
 
 	dados = missoes[id_missao_ativa]
-	resposta = dados["resposta"]
 
-	padronizar_dados()
+	# Limpa os dados da missão anterior
+	resposta.clear()
+	testes.clear()
 
-	entradas = dados["entradas"]
-	saidas = dados["saidas"]
-	completo = dados["completo"]
+	# Dados básicos
+	entradas = int(dados.get("entradas", 0))
+	saidas = int(dados.get("saidas", 0))
+	completo = bool(dados.get("completo", false))
+
+	# Tipo da missão
+	tipo = str(dados.get("tipo", "combinacional"))
+
+	# Carrega os dados específicos de cada tipo
+	if tipo == "sequencial":
+		testes = dados.get("testes", [])
+	else:
+		resposta = []
+		padronizar_dados()
+
 
 
 func padronizar_dados() -> void:
-	for x in resposta:
-		for i in range(len(x)):
-			x[i] = int(x[i])
+	if tipo == "sequencial":
+		return
+
+	if not dados.has("resposta"):
+		push_error(
+			"Missão " + id_missao_ativa +
+			" não possui campo 'resposta'."
+		)
+		return
+
+	for i in range(2 ** entradas):
+		var temp: Array = []
+
+		for j in range(saidas):
+			var valor = dados["resposta"][j][i]
+
+			if valor is String:
+				temp.append(valor)
+			else:
+				temp.append(int(valor))
+
+		resposta.append(temp)
 
 func repetir_missao(id) -> void:
+	if not missoes.has(id):
+		push_error("Missão não encontrada: " + id)
+		return
+
 	id_missao_ativa = id
 	dados = missoes[id]
+
 	completo = false
 	dados["completo"] = false
+
 	atualizar_arquivo()
+
 	aceitar_missao(id)
 
 func atualizar_arquivo() -> void:
+	if not missoes.has(id_missao_ativa):
+		push_error("Missão ativa não encontrada: " + id_missao_ativa)
+		return
+		
 	dados["completo"] = completo
 	missoes[id_missao_ativa]["completo"] = completo
 	
@@ -104,4 +153,17 @@ func atualizar_arquivo() -> void:
 	arquivo.close()
 
 func verificar_completo(id: String) -> bool:
+	if not missoes.has(id):
+		return false
+		
 	return missoes[id]["completo"]
+
+func liberar_prox_missoes() -> void:
+	var proximas = dados.get("libera", [])
+
+	if proximas == null:
+		return
+
+	for id in proximas:
+		if missoes.has(id):
+			missoes[id]["liberado"] = true

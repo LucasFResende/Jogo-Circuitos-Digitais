@@ -20,7 +20,7 @@ func verificar_logica() -> void:
 		saida1.sinal = false
 		saida2.sinal = not saida1.sinal
 	elif sinal_S == true and sinal_R == true:
-		return
+		pass
 	
 	for child in %SaidaLigacao.get_children():
 		child.atualizar()

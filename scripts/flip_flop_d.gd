@@ -10,11 +10,11 @@ var saida1:Saida
 var saida2:Saida
 
 func _ready() -> void:
-	area_2d.input_event.connect(_on_area_2d_input_event)
 	entrada = %Entrada1
 	entrada_clock = %Entrada2
 	saida1 = %Saida1
 	saida2 = %Saida2
+	ready_padrao()
 
 func adicionar() -> void:
 	nome.set(
