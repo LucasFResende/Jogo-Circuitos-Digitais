@@ -1,3 +1,4 @@
+class_name Email
 extends Control
 
 var contador_email: int = 10
@@ -12,6 +13,11 @@ var foldable_group: FoldableGroup
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	iniciar()
+
+func iniciar() -> void:
+	for i in container_email.get_children():
+		i.call_deferred("queue_free")
 	if tem_email:
 		foldable_group = FoldableGroup.new()
 		foldable_group.allow_folding_all = true
