@@ -7,6 +7,8 @@ extends Control
 @onready var fechar:FecharButton = $"../Camera2D/UI/FecharButton"
 @onready var tabela: GridContainer = %Tabela
 @onready var label:Label = %Label
+@onready var imagem_guia:Sprite2D = %ImagemGuia
+@onready var imagem:Control = %Imagem
 @export var no_pai:Control
 
 var resp_quantidade_entradas: int
@@ -24,6 +26,11 @@ var saida: Array = []
 
 
 func _ready() -> void:
+	if Missoes.dados.is_empty() or Missoes.dados["imagem"] == null:
+		imagem.visible = false
+	else:
+		imagem_guia.texture = load(Missoes.dados["imagem"])
+		imagem.visible = true
 	if !Missoes.completo:
 		if Missoes.entradas:
 			iniciar_entradas(Missoes.entradas)
@@ -33,6 +40,7 @@ func _ready() -> void:
 	else:
 		%ConfirmarButton.disabled = true
 		%ConfirmarButton.visible = false
+
 		
 func _process(delta: float) -> void:
 	if resposta_certa:

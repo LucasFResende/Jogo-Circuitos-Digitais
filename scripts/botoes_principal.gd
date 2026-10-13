@@ -20,3 +20,11 @@ func fechando()-> void:
 	botao_manual.mouse_filter = Control.MOUSE_FILTER_STOP
 	botao_computador.mouse_filter = Control.MOUSE_FILTER_STOP
 	botao_editor_circuito.mouse_filter = Control.MOUSE_FILTER_STOP
+
+
+func _on_mouse_entered() -> void:
+	Global.mudar_mouse_selecao()
+
+
+func _on_mouse_exited() -> void:
+	Global.mudar_mouse_padrao()

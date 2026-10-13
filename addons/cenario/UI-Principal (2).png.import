@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ylc7ffjlmn27"
-path="res://.godot/imported/editor-circuitos.png-fd0996a7f1db2560c3998ed8c978e03a.ctex"
+uid="uid://7c3ga0tvrngk"
+path="res://.godot/imported/UI-Principal (2).png-507bd9f301b2f6c14a1ee94497bc9175.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/cenario/editor-circuitos.png"
-dest_files=["res://.godot/imported/editor-circuitos.png-fd0996a7f1db2560c3998ed8c978e03a.ctex"]
+source_file="res://addons/cenario/UI-Principal (2).png"
+dest_files=["res://.godot/imported/UI-Principal (2).png-507bd9f301b2f6c14a1ee94497bc9175.ctex"]
 
 [params]
 
